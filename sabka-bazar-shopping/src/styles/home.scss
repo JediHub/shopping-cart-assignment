@@ -1,0 +1,109 @@
+
+.home-tile {
+    height: auto;
+    margin:0 12%;
+    border-bottom: 2px solid #cfcfcf;
+/* box-shadow: 3px 3px 2px rgb(250, 249, 249); */
+}
+
+
+.slide-container {
+    border-bottom: 2px solid #cfcfcf;
+    box-shadow: 3px 3px 2px rgb(250, 249, 249);
+    }
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    margin: auto;
+   
+  }
+
+  /* Hide the images by default */
+.mySlides {
+    display: none;
+  }
+
+  
+.slides-dot {
+    text-align: center;
+    margin-bottom: 2%;   
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .left-image img {
+    height: 150px;
+    width: auto;
+   /*  width: 100%;
+  height: auto; */
+}
+
+.category-info {
+    float: left;
+    margin-top: 4% !important;
+    text-align: center;
+}
+
+.category-info h2 {
+    margin-left: 4% ;
+    font-size: 85%;
+}
+
+.category-info p {
+    margin-top: 4%;
+    font-size: 65%;
+}
+
+.btn-title {
+    display: inline-block;
+    background-color: rgb(236, 83, 108);
+    padding: 2%;
+    text-decoration: none;
+    color: white;
+    margin-left: 4%;
+    margin-top: 3%;
+}
+

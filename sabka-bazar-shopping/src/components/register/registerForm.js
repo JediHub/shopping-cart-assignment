@@ -74,15 +74,15 @@ class Register extends Component {
   }
 
   //Need to work on this
-  onChange = (event) => {   
-    event.preventDefault();
-    let errors = this.state.errors;
+  // onChange = (event) => {   
+  //   event.preventDefault();
+  //   let errors = this.state.errors;
     
-    if (event.target.password.value !== event.target.confirmPassword.value){
-      this.setState({errors,confirmPassword: 'password and confirm password did not match' });
-    }
+  //   if (event.target.password.value !== event.target.confirmPassword.value){
+  //     this.setState({errors,confirmPassword: 'password and confirm password did not match' });
+  //   }
     
-  }
+  // }
 
   handleSubmit = (event) => {
     event.preventDefault();

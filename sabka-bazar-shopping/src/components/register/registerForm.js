@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import { render } from 'react-dom';
 import {Link} from 'react-router-dom';
-import Header from "../header";
+import Header from "../header/headerView";
 import Footer from "../footer";
 import './../../components/register/register.scss';
 import './../../styles/Grid.scss';

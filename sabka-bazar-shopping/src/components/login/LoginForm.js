@@ -1,69 +1,122 @@
-import React from "react";
-import { Field, reduxForm } from "redux-form";
-import { push } from "connected-react-router";
-import { connect } from "react-redux";
+import React, { Component } from "react";
+import Header from "../header/header";
+import Footer from "../footer";
+import { Link } from "react-router-dom";
+import "../../styles/common.scss";
 
-export const passwordRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/i;
-export const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
+const validPasswordRegex = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/);
 
-export const validate = inputs => {
-  const errors = {};
-  if (!inputs.email) {
-    errors.email = "Enter your Email";
-  } else if (!emailRegExp.test(inputs.email)) {
-    errors.username = "Invalid email address";
-  }
-  if (!inputs.password) {
-    errors.password = "Enter your Password";
-  } else if (inputs.password.length < 6) {
-    errors.password = "Minimum length 6 characters";
-  } else if (!passwordRegExp.test(inputs.password)) {
-    errors.password = "Must have a number and alphabet only";
-  }
-  return errors;
+const validateForm = errors => {
+  let valid = true;
+  Object.values(errors).forEach(val => val.length > 0 && (valid = false));
+  return valid;
 };
 
-const submit = (values, changePage) => {
-  changePage("/");
-};
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      errors: {
+        email: "",
+        password: ""
+      }
+    };
+  }
 
-class LoginForm extends React.Component {
+  handleChange = event => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let errors = this.state.errors;
+
+    switch (name) {
+      case "email":
+        errors.email = validEmailRegex.test(value)
+          ? ""
+          : "Email address is not valid!";
+        break;
+      case "password":
+        errors.password =
+          value.length < 6
+            ? "Password must be 6 characters long!"
+            : !validPasswordRegex.test(value)
+            ? "Must have a number and alphabet"
+            : "";
+        break;
+
+      default:
+        break;
+    }
+
+    this.setState({ errors, [name]: value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    if (validateForm(this.state.errors)) {
+      console.info("Valid Form");
+    } else {
+      console.error("Invalid Form");
+    }
+  };
+
   render() {
-    const { handleSubmit, changePage } = this.props;
+    const { errors } = this.state;
     return (
-      <form
-        onSubmit={handleSubmit(values => {
-          submit(values, changePage);
-        })}
-        noValidate
-      >
-        <Field name="email" component="input" type="text" placeholder="Email" />
-        <Field
-          name="password"
-          component="input"
-          type="text"
-          placeholder="Password"
-        />
-        <button type="submit" label="submit">
-          Submit
-        </button>
-      </form>
+      <div className="container">
+        <Header />
+        <section className="section-form">
+          <div className="row">
+          <div className="col span-1-of-2 shopping-form">
+              <h1>Login</h1>
+              <p className="order-info">Get access to your orders wish list and recommendations </p>
+            </div>
+            <div className="row">
+              <form onSubmit={this.handleSubmit} noValidate>
+                <div className="col span-1-of-2">
+                  <div className="row form-input-email">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      size="50"
+                      onChange={this.handleChange}
+                      noValidate
+                    />
+                    {errors.email && (
+                      <span className="error">{errors.email}</span>
+                    )}
+                  </div>
+
+                  <div className="row form-input">
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      size="50"
+                      onChange={this.handleChange}
+                      noValidate
+                    />
+                    {errors.password && (
+                      <span className="error">{errors.password}</span>
+                    )}
+                  </div>
+
+                  <div className="row form-input">
+                    <Link className="btn-login">Signup</Link>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <Footer />
+      </div>
     );
   }
 }
 
-// LoginForm = reduxForm({
-//   form: "Login",
-//   validate
-// })(LoginForm);
+export default Login;
 
-// const mapStateToProps = state => {
-//   return {};
-// };
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     changePage: url => dispatch(push(url))
-//   };
-// };
-
-export default LoginForm;

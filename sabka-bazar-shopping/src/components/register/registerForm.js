@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-//import { render } from 'react-dom';
 import {Link} from 'react-router-dom';
-import Header from "../header/headerView";
+import Header from "../header/header";
 import Footer from "../footer";
 import './../../components/register/register.scss';
 import './../../styles/Grid.scss';
@@ -100,7 +99,7 @@ class Register extends Component {
       <Header />
       <section className="section-form">
       <div className="row">
-      <div className="col span-1-of-2">
+      <div className="col span-1-of-2 shopping-form">
         <h1>Signup</h1>
         <p>We do not share your personal details with anyone.</p>
       </div>

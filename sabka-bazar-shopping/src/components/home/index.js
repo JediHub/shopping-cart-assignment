@@ -1,6 +1,6 @@
 import React from "react";
 //import Header from "../header";
-import Header from '../header/headerView'
+import Header from '../header/header'
 import Footer from "../footer";
 import "./../../styles/common.scss";
 import './../../styles/home.scss';
@@ -52,9 +52,7 @@ function Home(props) {
             </div>
           </CarouselProvider>
         </div>
-      </section>
 
-      <section>
         {categories && categories.map((item, i) => {
           return(
             i%2 === 0 ? 

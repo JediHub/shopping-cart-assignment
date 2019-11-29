@@ -19,7 +19,7 @@ input {
     border-bottom: 1px solid #cfcfcf;
     padding-top: 10px; 
     margin-bottom: 20px;
-    width: 70%; 
+    width: 90%; 
 }
 
 input:hover, input:active {
@@ -48,8 +48,7 @@ footer {
 
 footer p {
     padding: 20px;
-    //margin-left: 19%; //comment for mobile
-    font-size: 11px;  //for mobile
+    font-size: 11px; 
 }
 
 label {
@@ -69,6 +68,50 @@ label {
     margin: 20px;
 }
 
+.shopping-form h1 {
+    text-align: center;
+}
+
+.shopping-form p {
+    font-size: 9px;
+}
+
+.form-input span {
+    font-size: 10px;
+}
+
+.shopping-form .order-info {
+    font-size: 8px;
+}
+
+@media only screen and (min-width: 768px){
+    input {
+        width: 70%; 
+    }
+    .shopping-form h1 {
+        text-align: inherit;
+    }
+    
+    .shopping-form p {
+        font-size: 18px;
+    }
+    
+    .shopping-form .order-info {
+        font-size: 18px;
+    }
+
+    .form-input span {
+        font-size: 14px;
+    }
+
+    footer p {
+        padding: 20px;
+        margin-left: 19%;
+        font-size: 18px;
+    }
+    
+
+}
 /*********** plp styles *************/
 
 .section-plp {

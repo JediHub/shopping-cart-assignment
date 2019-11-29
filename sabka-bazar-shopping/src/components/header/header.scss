@@ -5,6 +5,11 @@
 //     padding-top: 0;
 // }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 .web-app {
     display: none;
@@ -39,16 +44,21 @@
   }
   
   .topnav a.icon {
-    background: rgb(177, 174, 174);
+    //background: rgb(177, 174, 174);
     display: block;
     position: absolute;
     right: 7px;
-    top: 7px;
+    top: 2px; //7px before
   }
   
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  // .topnav a:hover {
+  //   //background-color: #ddd;
+  //   color: black;
+  // }
+
+  .topnav a:focus {
+    //background-color: #ddd;
+    outline: none;
   }
   
 
@@ -69,24 +79,33 @@ header {
 
 .logo img {
     height: auto;
-    width: 30%;
+    max-width: 100%;
     display: block; 
-    margin-left: 35%;
+    margin-left: 35%;   //comment: check alternative for image position
 }
 
 
-.header-nav ul li{
+.header-nav ul li { 
     list-style: none;
     float: left;
     padding: 20px;
     margin-top: 28px;
-  
+}
+
+.header-nav ul li a{ 
+    text-decoration: none;
+    color: black;
 }
 
 .top-nav ul li{
     list-style: none;
     float: left;
-    margin-left:20px;
+    margin-left:25px;
+}
+
+.top-nav ul li a{
+    text-decoration: none;
+    color: black;
 }
 
 // Need to work on this
@@ -98,9 +117,9 @@ header {
 }
 
 .btn {
-    display: none; //wrong, need to work on this
-    width: 20%;
-    margin-top: 5%;
+    //wrong, need to work on this
+    width: 25%;
+    margin-top: 9%;
     margin-left: 10%;
     height: auto;
     padding: 2%;
@@ -111,5 +130,15 @@ header {
     color: #000;
     margin-bottom: -15px;
     
+    }
+
+.btn-cart img {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-cart a {
+  text-decoration: none;
+  color: black;
 }
 }

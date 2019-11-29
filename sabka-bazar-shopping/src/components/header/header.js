@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./../header/header.scss";
 import "../../styles/Grid.scss";
-import 'font-awesome/css/font-awesome.min.css';
+import "font-awesome/css/font-awesome.min.css";
 
 function Header(props) {
   function showMobileMenu(e) {
@@ -24,15 +24,26 @@ function Header(props) {
             <img src="/static/images/logo.png" alt="logo" />
             <div id="myLinks">
               <ul>
-              <Link to="/"><li>Home</li></Link>
-              <Link to="/plp"><li>Products</li></Link>
-              <Link to="/login"><li>Login</li></Link>
-              <Link to="/register"><li>Register</li></Link>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+
+                <li>
+                  <Link to="/plp">Products</Link>
+                </li>
+
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+
+                <li>
+                  <Link to="/register">Register</Link>
+                </li>
               </ul>
             </div>
 
             <div className="col span-1-of-3">
-              <a href="/#" class="icon" onClick={(e) => showMobileMenu(e)}>
+              <a href="/#" class="icon" onClick={e => showMobileMenu(e)}>
                 <i class="fa fa-bars"></i>
               </a>
             </div>
@@ -40,38 +51,37 @@ function Header(props) {
         </div>
 
         <div className="row web-app">
-          <div className="col span-1-of-3">
-            <figure className="logo">
-              <img src="/static/images/logo.png" alt="logo" />
-            </figure>
+          <div className="col span-1-of-3 logo">
+            <Link to="/" title="Sabka Bazar">
+              <img src="/static/images/logo.png" alt="sabka-bazar-logo" />
+            </Link>
           </div>
-          <div className="col span-1-of-3 header-nav">
+          <nav className="col span-1-of-3 header-nav">
             <ul>
-              <Link to="/">
-                <li>Home</li>
-              </Link>
-              <Link to="/plp">
-                <li>Products</li>
-              </Link>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/plp">Products</Link>
+              </li>
             </ul>
-          </div>
-          <div className="col span-1-of-3 top-nav">
-            <div className="row">
-              <ul>
-                <Link to="/login">
-                  <li>Sign in</li>
-                </Link>
-                <Link to="/Register">
-                  <li>Register</li>
-                </Link>
-              </ul>
-            </div>
-            <div className="row">
-              <Link className="btn btn-cart" to="#">
-                <i className="fas fa-shopping-cart cart-icon"></i> 0 items
+          </nav>
+          <nav className="col span-1-of-3 top-nav">
+            <ul>
+              <li>
+                <Link to="/login">Sign in</Link>
+              </li>
+              <li>
+                <Link to="/Register">Register</Link>
+              </li>
+            </ul>
+
+            <div className="btn btn-cart">
+              <Link to={"#"} title="cart">
+                <img src="/static/images/cart.svg" alt="cart-logo" /> 0 items
               </Link>
             </div>
-          </div>
+          </nav>
         </div>
       </header>
     </div>

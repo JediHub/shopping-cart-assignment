@@ -84,6 +84,11 @@ label {
     font-size: 8px;
 }
 
+.left-image img {
+    height: 140px;
+    width: 100%;
+}
+
 @media only screen and (min-width: 768px){
     input {
         width: 70%; 
@@ -102,6 +107,11 @@ label {
 
     .form-input span {
         font-size: 14px;
+    }
+
+    .left-image img {
+        height: 140px;
+        width: 50%;
     }
 
     footer p {
@@ -381,14 +391,6 @@ padding: 5px;
   to {opacity: 1}
 }
 
-.left-image img {
-    height: 150px;
-    width: auto;
-   /*  width: 100%;
-  height: auto; */
-}
-
-
 .btn-tile {
     display: inline-block;
     background-color: rgb(236, 83, 108);
@@ -408,11 +410,11 @@ padding: 5px;
     visibility: hidden;
 }
 
-@media only screen and (max-width:1023px){
-    .left-image img {
-         width: 100%;
-  height: auto; 
-    }
-}
+// @media only screen and (max-width:1023px){
+//     .left-image img {
+//          width: 100%;
+//          height: auto; 
+//     }
+// }
 
 /************ end of home styles **********/

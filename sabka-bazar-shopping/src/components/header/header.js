@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./../header/header.scss";
+import '../../styles/header.scss';
 import "../../styles/Grid.scss";
 import "font-awesome/css/font-awesome.min.css";
 
@@ -21,7 +21,7 @@ function Header(props) {
       <header>
         <div class="topnav">
           <div class="row mobile-logo">
-            <img src="/static/images/logo.png" alt="logo" />
+            <Link to={'/'}><img src="/static/images/logo.png" alt="logo" /></Link>
             <div id="myLinks">
               <ul>
                 <li>
@@ -56,7 +56,7 @@ function Header(props) {
               <img src="/static/images/logo.png" alt="sabka-bazar-logo" />
             </Link>
           </div>
-          <nav className="col span-1-of-3 header-nav">
+          <nav role="navigation" aria-label="header navigation" className="col span-1-of-3 header-nav">
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -66,7 +66,7 @@ function Header(props) {
               </li>
             </ul>
           </nav>
-          <nav className="col span-1-of-3 top-nav">
+          <nav aria-label="top navigation" className="col span-1-of-3 top-nav">
             <ul>
               <li>
                 <Link to="/login">Sign in</Link>
@@ -75,13 +75,13 @@ function Header(props) {
                 <Link to="/Register">Register</Link>
               </li>
             </ul>
-
+            </nav>
             <div className="btn btn-cart">
               <Link to={"#"} title="cart">
-                <img src="/static/images/cart.svg" alt="cart-logo" /> 0 items
+              <img src="/static/images/cart.svg" alt="cart-logo" /> 0 items
               </Link>
             </div>
-          </nav>
+           
         </div>
       </header>
     </div>

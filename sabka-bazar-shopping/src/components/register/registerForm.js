@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Header from "../header/header";
 import Footer from "../footer";
-import './../../components/register/register.scss';
+import '../../styles/register.scss'
 import './../../styles/Grid.scss';
 
 const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
@@ -107,37 +107,37 @@ class Register extends Component {
       <form onSubmit={this.handleSubmit} noValidate>
                 <div className="col span-1-of-2">
                   <div className='row form-input'>
-                  <input type='text' name='firstName' size="50" placeholder="First Name" onChange={this.handleChange} noValidate />
+                  <input type='text' name='firstName' size="50" placeholder="First Name" onChange={this.handleChange} aria-required="true" aria-describedby="firstName-error" noValidate />
                   {errors.firstName && 
                 <span className='error'>{errors.firstName}</span>}
                 </div>
                  
                 <div className='row form-input'>
-              <input type='text' name='lastName' size="50" placeholder="Last Name" onChange={this.handleChange} noValidate />
+              <input type='text' name='lastName' size="50" placeholder="Last Name" onChange={this.handleChange} aria-required="true" aria-describedby="lastName-error" noValidate />
                 {errors.lastName && 
                 <span className='error'>{errors.lastName}</span>}
                 </div>
              
                 <div className='row form-input-email'>
-              <input type='email' name='email' placeholder="Email" size="50" onChange={this.handleChange} noValidate />
+              <input type='email' name='email' placeholder="Email" size="50" onChange={this.handleChange} aria-required="true" aria-describedby="email-error" noValidate />
               {errors.email && 
                 <span className='error'>{errors.email}</span>}
                 </div>
 
                  <div className='row form-input'>
-              <input type='password' name='password' placeholder="Password" size="50" onChange={this.handleChange} noValidate />
+              <input type='password' name='password' placeholder="Password" size="50" onChange={this.handleChange} aria-required="true" aria-describedby="password-error" noValidate />
               {errors.password && 
                 <span className='error'>{errors.password}</span>}
                   </div>
 
                   <div className='row form-input'>
-              <input type='password' name='confirmPassword' placeholder="Confirm Password" size="50" onChange={this.onChange} noValidate />
+              <input type='password' name='confirmPassword' placeholder="Confirm Password" size="50" onChange={this.onChange} aria-required="true" aria-describedby="confirmPassword-error" noValidate />
               {errors.confirmPassword && 
                 <span className='error'>{errors.confirmPassword}</span>}
               </div>
              
               <div className="row form-input">
-             <Link className="btn-login">Signup</Link>
+             <Link to={'/'}><button type="submit" className="btn-login">Signup</button></Link>
              </div>
            </div>
           </form>

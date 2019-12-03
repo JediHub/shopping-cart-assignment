@@ -46,8 +46,8 @@ function Home(props) {
                       <Dot key={item.id} slide={i} className="dot" />
                   )})}
                 </div>
-                <ButtonBack className="prev">Back</ButtonBack>
-                <ButtonNext className="next">Next</ButtonNext>
+                <ButtonBack aria-label="previous" className="prev">Back</ButtonBack>
+                <ButtonNext aria-label="next" className="next">Next</ButtonNext>
               </div>
             </div>
           </CarouselProvider>
@@ -57,10 +57,8 @@ function Home(props) {
           return(
             i%2 === 0 ? 
           <div key={item.id} className="row home-tile">
-            <div className="col span-1-of-2">
-              <figure className="left-image">
+            <div className="col span-1-of-2 left-image">
                 <img src={item.imageUrl} alt={item.key} />
-              </figure>
             </div>
             <div className="col span-1-of-2 category-info">
               <h2>{item.name}</h2>
@@ -76,10 +74,8 @@ function Home(props) {
               <Link to={'#'} className="btn-title">Explore {item.key}</Link>
             </div>
 
-            <div className="col span-1-of-2">
-              <figure className="left-image">
+            <div className="col span-1-of-2 left-image">
                 <img src={item.imageUrl} alt={item.key} />
-              </figure>
             </div>
           </div>
         )}) }

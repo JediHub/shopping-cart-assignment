@@ -1,23 +1,21 @@
 import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import createSagaMiddleware from 'redux-saga';
-//import Home from './components/home';
 import HomeContainer from './containers/home/index';
 import Login from './components/login/loginForm';
-//import Register from './components/register';
 import Register from './components/register/registerForm';
-import plp from './components/plp';
+import plp from './containers/plp';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
 import { createStore, applyMiddleware } from 'redux';
-import { homeSaga } from './containers/home/saga';
+import rootSaga from './rootSaga';
 
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(homeSaga);
+sagaMiddleware.run(rootSaga);
 
 function App(){
   return (

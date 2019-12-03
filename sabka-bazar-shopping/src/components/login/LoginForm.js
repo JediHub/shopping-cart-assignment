@@ -83,6 +83,8 @@ class Login extends Component {
                       placeholder="Email"
                       size="50"
                       onChange={this.handleChange}
+                      aria-required="true"
+                      aria-describedby="email-error"
                       noValidate
                     />
                     {errors.email && (
@@ -97,6 +99,8 @@ class Login extends Component {
                       placeholder="Password"
                       size="50"
                       onChange={this.handleChange}
+                      aria-required="true"
+                      aria-describedby="password-error"
                       noValidate
                     />
                     {errors.password && (
@@ -105,7 +109,7 @@ class Login extends Component {
                   </div>
 
                   <div className="row form-input">
-                    <Link className="btn-login">Signup</Link>
+                  <Link to={'/'}><button type="submit" className="btn-login">Login</button></Link>
                   </div>
                 </div>
               </form>

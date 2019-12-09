@@ -63,7 +63,7 @@ function Home(props) {
             <div className="col span-1-of-2 category-info">
               <h2>{item.name}</h2>
               <p>{item.description}</p>
-              <Link to={'#'} className="btn-title">Explore {item.key}</Link>
+              <Link to={`/plp/${item.key}`} className="btn-title">Explore {item.key}</Link>
             </div>
           </div>
           : 
@@ -71,7 +71,7 @@ function Home(props) {
             <div className="col span-1-of-2 category-info">
               <h2>{item.name}</h2>
               <p>{item.description}</p>
-              <Link to={'#'} className="btn-title">Explore {item.key}</Link>
+              <Link to={`/plp/${item.key}`}className="btn-title">Explore {item.key}</Link>
             </div>
 
             <div className="col span-1-of-2 left-image">

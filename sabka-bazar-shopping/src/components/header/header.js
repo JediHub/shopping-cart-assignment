@@ -1,35 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/header.scss';
 import "../../styles/Grid.scss";
 import "font-awesome/css/font-awesome.min.css";
 
 function Header(props) {
+  const [display, setDisplay] = useState('none');
+
   function showMobileMenu(e) {
     e.preventDefault();
-    console.log("myFunction called:::");
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
+    if (display === "block") {
+      setDisplay('none');
+  } else {
+      setDisplay('block');
+  }
   }
 
   return (
-    <div>
+   
       <header>
         <div class="topnav">
           <div class="row mobile-logo">
             <Link to={'/'}><img src="/static/images/logo.png" alt="logo" /></Link>
-            <div id="myLinks">
-              <ul>
+              <ul className="myLinks" style={{ display: display}}>
                 <li>
                   <Link to="/">Home</Link>
                 </li>
 
                 <li>
-                  <Link to="/plp">Products</Link>
+                  <Link to="/plp/all">Products</Link>
                 </li>
 
                 <li>
@@ -40,8 +39,7 @@ function Header(props) {
                   <Link to="/register">Register</Link>
                 </li>
               </ul>
-            </div>
-
+            
             <div className="col span-1-of-3">
               <a href="/#" class="icon" onClick={e => showMobileMenu(e)}>
                 <i class="fa fa-bars"></i>
@@ -62,11 +60,12 @@ function Header(props) {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/plp">Products</Link>
+                <Link to="/plp/all">Products</Link>
               </li>
             </ul>
           </nav>
-          <nav aria-label="top navigation" className="col span-1-of-3 top-nav">
+          <div className="col span-1-of-3 top-nav" >
+          <nav aria-label="top navigation" className="row">
             <ul>
               <li>
                 <Link to="/login">Sign in</Link>
@@ -81,10 +80,11 @@ function Header(props) {
               <img src="/static/images/cart.svg" alt="cart-logo" /> 0 items
               </Link>
             </div>
+            </div>
            
         </div>
       </header>
-    </div>
+   
   );
 }
 

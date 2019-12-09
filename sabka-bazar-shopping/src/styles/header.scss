@@ -52,12 +52,21 @@
 @media only screen and (min-width: 768px) {
 
 header {
-    border-bottom: 2px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
     box-shadow: 3px 3px 2px rgb(250, 249, 249);
 }
 
+.top-nav nav{
+ margin-left: 30%;
+}
+
+.top-nav .btn{
+  margin-left: 36%;
+ }
+
 .topnav {
     display: none;
+    margin-left: 20px;
 }
 
 .web-app {
@@ -104,8 +113,8 @@ header {
 
 .btn {
     display: inline-block;
-    width: 8%;
-    margin-left: 3%;
+    width: 22%;
+    margin-left: 7%;
     height: auto;
     padding: 1%;
     background-color: grey;
@@ -114,6 +123,7 @@ header {
     text-decoration: none;
     color: #000;
     margin-bottom: -15px;
+    margin-top: 20px;
     
     }
 

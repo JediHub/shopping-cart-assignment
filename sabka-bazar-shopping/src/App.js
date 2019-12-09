@@ -23,7 +23,7 @@ function App(){
     <Router>
       <div>
           <Route exact path="/" component={HomeContainer} />
-          <Route path="/plp" component={plp} />
+          <Route path="/plp/:cid" component={plp} />
           <Route path="/login" component={Login} />
           <Route path="/Register" component={Register} />
       </div>

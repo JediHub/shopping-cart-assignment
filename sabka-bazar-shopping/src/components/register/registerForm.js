@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import Header from "../header/header";
 import Footer from "../footer";
 import '../../styles/register.scss'
@@ -19,6 +18,9 @@ const validateForm = (errors) => {
 class Register extends Component {
   constructor(props) {
     super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+   
     this.state = {
       firstName: '',
       lastName:'',
@@ -35,11 +37,11 @@ class Register extends Component {
     };
   }
 
-  handleChange = (event) => {
+  handleChange =(event) => {
     event.preventDefault();
     const { name, value } = event.target;
     let errors = this.state.errors;
-
+   
     switch (name) {
       case 'firstName': 
         errors.firstName = 
@@ -64,7 +66,12 @@ class Register extends Component {
         value.length < 6 
             ? 'Password must be 6 characters long!' : !validPasswordRegex.test(value) ? 'Must have a number and alphabet' : '' ;
         break;
-    
+        case 'confirmPassword': 
+        errors.confirmPassword = 
+        value.length === 0
+            ? '' : !validPasswordRegex.test(value) ? 'Must have a number and alphabet' : '' ;
+        break;
+        
       default:
         break;
     }
@@ -72,19 +79,20 @@ class Register extends Component {
     this.setState({errors, [name]: value});
   }
 
-  //Need to work on this
-  // onChange = (event) => {   
-  //   event.preventDefault();
-  //   let errors = this.state.errors;
-    
-  //   if (event.target.password.value !== event.target.confirmPassword.value){
-  //     this.setState({errors,confirmPassword: 'password and confirm password did not match' });
-  //   }
-    
-  // }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    let errors = this.state.errors;
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+    let password = e.target.elements.password.value;
+    let confirmPassword = e.target.elements.confirmPassword.value;
+
+    if (password !== confirmPassword) {
+      errors.confirmPassword = 'password and confirm password does not match';
+
+      this.setState({errors, [confirmPassword]: confirmPassword});
+    } 
+
+    console.log('Submit button called::::');
     if(validateForm(this.state.errors)) {
       console.info('Valid Form')
     }else{
@@ -131,13 +139,13 @@ class Register extends Component {
                   </div>
 
                   <div className='row form-input'>
-              <input type='password' name='confirmPassword' placeholder="Confirm Password" size="50" onChange={this.onChange} aria-required="true" aria-describedby="confirmPassword-error" noValidate />
+              <input type='password'  name='confirmPassword' placeholder="Confirm Password" size="50" onChange={this.handleChange} aria-required="true" aria-describedby="confirmPassword-error" noValidate />
               {errors.confirmPassword && 
                 <span className='error'>{errors.confirmPassword}</span>}
               </div>
              
               <div className="row form-input">
-             <Link to={'/'}><button type="submit" className="btn-login">Signup</button></Link>
+             <button type="submit" value="Submit" className="btn-login">Signup</button>
              </div>
            </div>
           </form>

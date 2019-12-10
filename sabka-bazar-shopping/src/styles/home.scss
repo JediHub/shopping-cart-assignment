@@ -2,15 +2,17 @@
 .home-tile {
     height: auto;
     margin:0 12%;
-    border-bottom: 2px solid #cfcfcf;
+    //border-bottom: 2px solid #cfcfcf;
+    padding-bottom: 20px;
     
 /* box-shadow: 3px 3px 2px rgb(250, 249, 249); */
 }
 
-.slide-container {
-    border-bottom: 2px solid #cfcfcf;
-    box-shadow: 3px 3px 2px rgb(250, 249, 249);
-    }
+.bottom-row {
+  height: 2px;
+  background: linear-gradient(to left, white, #cfcfcf 25%,  #cfcfcf 75%, white);
+}
+
 
 /* Slideshow container */
 .slideshow-container {
@@ -30,14 +32,15 @@
 
 .slides-dot {
     text-align: center;
-    margin-bottom: 2%;   
+    //margin-bottom: 2%;  
+    margin-top: -4%; 
 }
 
 /* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 8px;
+    width: 8px;
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
@@ -79,7 +82,7 @@
 
 .category-info {
     float: left;
-    margin-top: 4% !important;
+    margin-top: 3% !important;
     text-align: center;
 }
 
@@ -88,7 +91,7 @@
     font-size: 85%;
 }
 
-.category-info p {
+.category-info figcaption {
     margin-top: 4%;
     font-size: 65%;
 }

@@ -23,7 +23,7 @@ function Home(props) {
     
     <div className="container">
       <Header />
-      <section>
+      <main>
         <div className="row home-tile clearfix">
           <CarouselProvider
             naturalSlideWidth={100}
@@ -31,8 +31,8 @@ function Home(props) {
             totalSlides={banners && banners.length}
             isPlaying={true}
           >
-            <div class="slide-container">
-              <div class="slideshow-container">
+            <div className="slide-container">
+              <div className="slideshow-container">
                 <Slider>
                   {banners && banners.map((item,i) => {
                     return (
@@ -57,29 +57,37 @@ function Home(props) {
           return(
             i%2 === 0 ? 
           <div key={item.id} className="row home-tile">
+            <div class="bottom-row"></div>
+            <figure>
             <div className="col span-1-of-2 left-image">
-                <img src={item.imageUrl} alt={item.key} />
+            <img src={item.imageUrl} alt={item.key} />
             </div>
             <div className="col span-1-of-2 category-info">
               <h2>{item.name}</h2>
-              <p>{item.description}</p>
+              <figcaption>{item.description}</figcaption>
               <Link to={`/plp/${item.key}`} className="btn-title">Explore {item.key}</Link>
             </div>
+            </figure>
+            
           </div>
           : 
           <div key={item.id} className="row home-tile">
+             <div class="bottom-row"></div>
+            <figure>
             <div className="col span-1-of-2 category-info">
               <h2>{item.name}</h2>
-              <p>{item.description}</p>
+              <figcaption>{item.description}</figcaption>
               <Link to={`/plp/${item.key}`}className="btn-title">Explore {item.key}</Link>
             </div>
 
             <div className="col span-1-of-2 left-image">
                 <img src={item.imageUrl} alt={item.key} />
             </div>
+            </figure>
+           
           </div>
         )}) }
-      </section>
+      </main>
       <Footer />
     </div>
   );

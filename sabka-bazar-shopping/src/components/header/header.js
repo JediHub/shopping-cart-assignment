@@ -19,8 +19,8 @@ function Header(props) {
   return (
    
       <header>
-        <div class="topnav">
-          <div class="row mobile-logo">
+        <div className="topnav">
+          <div className="row mobile-logo">
             <Link to={'/'}><img src="/static/images/logo.png" alt="logo" /></Link>
               <ul className="myLinks" style={{ display: display}}>
                 <li>
@@ -41,8 +41,8 @@ function Header(props) {
               </ul>
             
             <div className="col span-1-of-3">
-              <a href="/#" class="icon" onClick={e => showMobileMenu(e)}>
-                <i class="fa fa-bars"></i>
+              <a href="/#" className="icon" onClick={e => showMobileMenu(e)}>
+                <i className="fa fa-bars"></i>
               </a>
             </div>
           </div>
@@ -55,28 +55,28 @@ function Header(props) {
             </Link>
           </div>
           <nav role="navigation" aria-label="header navigation" className="col span-1-of-3 header-nav">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
+            <ul role="menu">
+              <li role="menuitem">
+                <Link to="/" aria-label="Home Menu Item" title="Home">Home</Link>
               </li>
-              <li>
-                <Link to="/plp/all">Products</Link>
+              <li role="menuitem">
+                <Link to="/plp/all" aria-label="Products Menu Item" title="Products">Products</Link>
               </li>
             </ul>
           </nav>
           <div className="col span-1-of-3 top-nav" >
           <nav aria-label="top navigation" className="row">
-            <ul>
-              <li>
-                <Link to="/login">Sign in</Link>
+            <ul role="menu">
+              <li role="menuitem">
+                <Link to="/login" aria-label="Sign In Menu Item" title="Sign In">Sign in</Link>
               </li>
-              <li>
-                <Link to="/Register">Register</Link>
+              <li role="menuitem">
+                <Link to="/Register" aria-label="Sign Up Menu Item" title="Sign Up">Register</Link>
               </li>
             </ul>
             </nav>
             <div className="btn btn-cart">
-              <Link to={"#"} title="cart">
+              <Link to={"#"} title="Cart">
               <img src="/static/images/cart.svg" alt="cart-logo" /> 0 items
               </Link>
             </div>

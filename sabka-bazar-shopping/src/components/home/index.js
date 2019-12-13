@@ -65,10 +65,9 @@ function Home(props) {
             <div className="col span-1-of-2 category-info">
               <h2>{item.name}</h2>
               <figcaption>{item.description}</figcaption>
-              <Link to={`/plp/${item.key}`} className="btn-title">Explore {item.key}</Link>
+              <Link to={`/plp/${item.key}`} className="btn-title" title={item.name}>Explore {item.key}</Link>
             </div>
             </figure>
-            
           </div>
           : 
           <div key={item.id} className="row home-tile">
@@ -77,7 +76,7 @@ function Home(props) {
             <div className="col span-1-of-2 category-info">
               <h2>{item.name}</h2>
               <figcaption>{item.description}</figcaption>
-              <Link to={`/plp/${item.key}`}className="btn-title">Explore {item.key}</Link>
+              <Link to={`/plp/${item.key}`}className="btn-title" title={item.name}>Explore {item.key}</Link>
             </div>
 
             <div className="col span-1-of-2 left-image">

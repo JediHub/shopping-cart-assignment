@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import createSagaMiddleware from 'redux-saga';
 import HomeContainer from './containers/home/index';
-import Login from './components/login/LoginForm';
+import Login from './components/login/loginForm';
 import Register from './components/register/registerForm';
 import plp from './containers/plp';
 import { Provider } from 'react-redux';

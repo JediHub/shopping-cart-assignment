@@ -20,7 +20,7 @@ function Header(props) {
    
       <header>
         <div className="topnav">
-          <div className="row mobile-logo">
+          <div className="mobile-logo">
             <Link to={'/'}><img src="/static/images/logo.png" alt="logo" /></Link>
               <ul className="myLinks" style={{ display: display}}>
                 <li>
@@ -40,7 +40,7 @@ function Header(props) {
                 </li>
               </ul>
             
-            <div className="col span-1-of-3">
+            <div className=" ">
               <a href="/#" className="icon" onClick={e => showMobileMenu(e)}>
                 <i className="fa fa-bars"></i>
               </a>
@@ -48,13 +48,13 @@ function Header(props) {
           </div>
         </div>
 
-        <div className="row web-app">
-          <div className="col span-1-of-3 logo">
-            <Link to="/" title="Sabka Bazar">
+        <div className="flexContainer web-app">
+          <div className="flexItem flexContainer flexCenter itemCenter logo">
+            
               <img src="/static/images/logo.png" alt="sabka-bazar-logo" />
-            </Link>
+           
           </div>
-          <nav role="navigation" aria-label="header navigation" className="col span-1-of-3 header-nav">
+          <nav role="navigation" aria-label="header navigation" className="flexItem  header-nav">
             <ul role="menu">
               <li role="menuitem">
                 <Link to="/" aria-label="Home Menu Item" title="Home">Home</Link>
@@ -64,9 +64,9 @@ function Header(props) {
               </li>
             </ul>
           </nav>
-          <div className="col span-1-of-3 top-nav" >
-          <nav aria-label="top navigation" className="row">
-            <ul role="menu">
+          <div className="flexItem" >
+          <nav aria-label="top navigation" className="top-nav">
+            <ul role="menu" className="flexContainer flexCenter">
               <li role="menuitem">
                 <Link to="/login" aria-label="Sign In Menu Item" title="Sign In">Sign in</Link>
               </li>
@@ -75,10 +75,12 @@ function Header(props) {
               </li>
             </ul>
             </nav>
-            <div className="btn btn-cart">
+            <div className="btn-cart flexContainer flexCenter flexEnd">
+            <span className="cart">
               <Link to={"#"} title="Cart">
               <img src="/static/images/cart.svg" alt="cart-logo" /> 0 items
               </Link>
+            </span>
             </div>
             </div>
            

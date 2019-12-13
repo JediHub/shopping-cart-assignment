@@ -56,13 +56,13 @@ header {
     box-shadow: 3px 3px 2px rgb(250, 249, 249);
 }
 
-.top-nav nav{
- margin-left: 30%;
-}
+// .top-nav nav{
+//  margin-left: 30%;
+// }
 
-.top-nav .btn{
-  margin-left: 36%;
- }
+// .top-nav .btn{
+//   margin-left: 36%;
+//  }
 
 .topnav {
     display: none;
@@ -70,16 +70,15 @@ header {
 }
 
 .web-app {
-    display: inline;
+    display: flex;
 }
 
-.logo img {
-    height: auto;
-    max-width: 100%;
-    display: block; 
-    margin-left: 35%; 
-}
-
+// .logo img {
+//     height: auto;
+//     max-width: 100%;
+//     display: block; 
+//     margin-left: 35%; 
+// }
 
 .header-nav ul li { 
     list-style: none;
@@ -95,37 +94,47 @@ header {
 
 .top-nav ul li{
     list-style: none;
-    float: left;
-    margin-left:25px;
+    //float: left;
+    //margin-left:25px;
+    margin-bottom: 25px;
 }
 
 .top-nav ul li a{
     text-decoration: none;
     color: black;
+    padding: 0 7px;
 }
 
-.cart-icon {
-    display: none;
-    font-size: 200%;
-    margin-right: 5px;
-    vertical-align: middle;
-}
+// .cart-icon {
+//     display: none;
+//     font-size: 200%;
+//     margin-right: 5px;
+//     vertical-align: middle;
+// }
 
-.btn {
-    display: inline-block;
-    width: 22%;
-    margin-left: 7%;
-    height: auto;
-    padding: 1%;
-    background-color: grey;
-    opacity: 0.7;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-    margin-bottom: -15px;
-    margin-top: 20px;
+// .btn {
+//     display: inline-block;
+//     width: 22%;
+//     margin-left: 7%;
+//     height: auto;
+//     padding: 1%;
+//     background-color: grey;
+//     opacity: 0.7;
+//     text-align: center;
+//     text-decoration: none;
+//     color: #000;
+//     margin-bottom: -15px;
+//     margin-top: 20px;
     
-    }
+//     }
+
+.cart {
+  //text-align: center;
+  background-color: grey;
+  padding: 4px;
+  
+
+}
 
 .btn-cart img {
   width: 30px;
@@ -136,4 +145,34 @@ header {
   text-decoration: none;
   color: black;
 }
+
+
+/* *******************************
+ *    FlexBox Styling            *
+ ********************************/
+
+ .flexContainer {
+  display: flex;
+}
+
+.flexItem {
+  flex: 1;
+}
+
+.flexStart {
+  justify-content: flex-start;
+}
+
+.flexEnd {
+  align-items: flex-end;
+}
+
+.flexCenter {
+  justify-content: center;
+}
+
+.itemCenter {
+  align-items: center;
+}
+
 }

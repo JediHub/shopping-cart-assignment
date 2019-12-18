@@ -146,33 +146,4 @@ header {
   color: black;
 }
 
-
-/* *******************************
- *    FlexBox Styling            *
- ********************************/
-
- .flexContainer {
-  display: flex;
-}
-
-.flexItem {
-  flex: 1;
-}
-
-.flexStart {
-  justify-content: flex-start;
-}
-
-.flexEnd {
-  align-items: flex-end;
-}
-
-.flexCenter {
-  justify-content: center;
-}
-
-.itemCenter {
-  align-items: center;
-}
-
 }

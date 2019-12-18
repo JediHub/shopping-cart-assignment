@@ -86,7 +86,7 @@ label {
 
 .left-image img {
     height: 140px;
-    width: 100%;
+    width: 70%;
 }
 
 @media only screen and (min-width: 768px){
@@ -120,6 +120,34 @@ label {
         margin-left: 10%;
         font-size: 15px;
     }
+
+ /* *******************************
+ *    FlexBox Styling            *
+ ********************************/
+
+ .flexContainer {
+    display: flex;
+  }
+  
+  .flexItem {
+    flex: 1;
+  }
+  
+  .flexStart {
+    justify-content: flex-start;
+  }
+  
+  .flexEnd {
+    align-items: flex-end;
+  }
+  
+  .flexCenter {
+    justify-content: center;
+  }
+  
+  .itemCenter {
+    align-items: center;
+  }
     
 
 }
@@ -356,12 +384,3 @@ label {
     height: 0;
     visibility: hidden;
 }
-
-// @media only screen and (max-width:1023px){
-//     .left-image img {
-//          width: 100%;
-//          height: auto; 
-//     }
-// }
-
-/************ end of home styles **********/

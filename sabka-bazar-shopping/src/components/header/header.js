@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/header.scss';
+import "./../../styles/common.scss";
 import "../../styles/Grid.scss";
 import "font-awesome/css/font-awesome.min.css";
 
@@ -40,7 +41,7 @@ function Header(props) {
                 </li>
               </ul>
             
-            <div className=" ">
+            <div>
               <a href="/#" className="icon" onClick={e => showMobileMenu(e)}>
                 <i className="fa fa-bars"></i>
               </a>

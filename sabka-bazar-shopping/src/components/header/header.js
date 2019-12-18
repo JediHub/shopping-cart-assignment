@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/header.scss';
 import "./../../styles/common.scss";
-import "../../styles/Grid.scss";
 import "font-awesome/css/font-awesome.min.css";
 
 function Header(props) {

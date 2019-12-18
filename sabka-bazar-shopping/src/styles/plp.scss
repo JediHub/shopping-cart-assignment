@@ -1,16 +1,18 @@
+@import "./variables.scss";
+
 *{
     text-decoration: none;
 }
 
 .section-plp{
     .sidebar {
-        background-color: #a6a6a6;
+        background-color: $color-darkgray;
         width: 100%;
         ul {
             padding-left: 0px;
         }
         ul li {
-            border-bottom: 1px solid grey;
+            border-bottom: 1px solid $color-grey;
             list-style: none;
             padding: 10px;
             a{
@@ -21,14 +23,13 @@
         .topnavside{
             display: block;
             overflow: hidden;
-            background-color: #ee5c74;
-            //position: relative;
+            background-color: $color-darkpink;
             .iconDown {
                 float: right;
                 height: 17px;
               }
             .selectedFilter{
-                color: #fff;
+                color: $color-white;
             }  
             .myLinks {
                 display: none;
@@ -38,21 +39,17 @@
                 list-style: none;
             }
             a {
-                color: #000;
+                color: $color-black;
                 padding: 5px 10px;
                 font-size: 17px;
                 display: block;
-              }
-            //   a:hover {
-            //     //background-color: #ddd;
-            //     color: black;
-            //   }      
+              }  
         }
     }
     
     .active {
-        background-color: #7B847B;
-        color: white;
+        background-color: $color-boulder;
+        color: $color-white;
       }
 
     .products {
@@ -63,7 +60,7 @@
                 margin-bottom: 100px;
                 .item {
                     box-sizing: border-box;
-                    border-bottom: 2px dotted #a6a6a6;
+                    border-bottom: 2px dotted $color-darkgray;
                     margin: 2% 0 2% 0;
                     padding: 5px;   
                     .item-content{  
@@ -76,22 +73,21 @@
 
                     img {
                         width: 100%;
-                        //display: inline-block;
                     }
                     
                     p {
                         margin-top: 0px;
                         font-size: 12px;
                         text-align: auto;
-                        background-color:#a6a6a6;
+                        background-color: $color-darkgray;
                     }
             
                     .price-tag 
                     {
                         overflow: hidden;
                         button {
-                        background-color: #BF2857;
-                        color: #fff;
+                        background-color: $color-oldrose;
+                        color: $color-white;
                         text-decoration: none;
                         padding: 4px;
                         margin-left: 2px;
@@ -99,12 +95,11 @@
                         font-size: 16px;
                         float: right;
                     
-                    }
+                        }
+                   }
                 }
-                    }
             }
     }
-
 }
 
 @media screen and (min-width: 480px){
@@ -114,7 +109,7 @@
             width: 50%;
             border-bottom: none;
             margin-left: 2px;
-            border-right: 3px solid #f1f1f1;
+            border-right: 3px solid $color-whitesmoke;
             .item-content{
                 .item-inner-content{
                     width: 100%;
@@ -141,7 +136,7 @@
             height: 100px;
             .topnavside{
                 display: block;
-                background-color: #a6a6a6;
+                background-color: $color-darkgray;
                 .iconDown {
                     display: none;
                   }
@@ -165,8 +160,8 @@
                     }
                     width: 25%;
                     border-bottom: none;
-                    border-right: 3px solid #f1f1f1;
-                    border-bottom: 2px dotted #f1f1f1;
+                    border-right: 3px solid $color-whitesmoke;
+                    border-bottom: 2px dotted $color-whitesmoke;
                     .item-content{  
                         .item-inner-content{
                         width: 100%;
@@ -177,13 +172,10 @@
                         .price-tag {
                             font-size: 14px;
                         }
-                        }
+                       }
                     }
                 }
-            } 
-            
+            }             
         } 
     }
-       
-
 }       

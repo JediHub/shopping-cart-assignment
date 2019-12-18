@@ -1,10 +1,11 @@
+@import "./variables.scss";
 
   input.error {
-    border: 1px solid #EADAE4;
+    border: 1px solid $color-prim;
   }
   
   .error {
-    color: red;
+    color: $color-red;
     font-size: 12px;
     display: inline-block;
   }
@@ -12,7 +13,7 @@
   .btn-login {
     display: inline-block;
     width: 88%;
-    background-color: #BF2857;
+    background-color: $color-oldrose;
     text-align: center;
     color: #fff;
     text-decoration: none;
@@ -23,33 +24,29 @@
 
 .form-input-email {
     padding: 15px;
-}
-
-.form-input-email input {
+    input {
     border: 0;
     outline: 0;
     background: transparent;
-    border-bottom: 1px solid #cfcfcf;
+    border-bottom: 1px solid $color-lightgray;
     padding-top: 10px; 
     margin-bottom: 20px;
     width: 90%; 
     display: block;
+    }
 }
 
 @media only screen and (min-width: 768px){
 
-  .form-input-email input {
-   //width: 70%;
-  }
-
-   
   .btn-login {
     width: 90%;
     padding: 5px;
     margin-top: 30px;
   }
 
-  .form-input-email span {
+  .form-input-email {
+    span {
     font-size: 14px;
+    }
   }
 }

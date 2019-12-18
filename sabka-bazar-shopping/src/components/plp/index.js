@@ -11,11 +11,11 @@ function Plp(props) {
 
     return <div className="container">
     <Header/>
-        <section className="section-plp" id="main">
+        <main className="section-plp" id="main">
             <div className="row">
                 <div className="col span-2-of-10 sidebar">
                     <nav className="topnavside"> 
-                    <Link onClick={showMenu}><span className="selectedFilter" >{cid.replace(/-/g, ' ').toUpperCase()}</span><img src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" /></Link>
+                    <Link onClick={showMenu} aria-label="Show Menu"><span className="selectedFilter" >{cid.replace(/-/g, ' ').toUpperCase()}</span><img src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" /></Link>
                         <ul className="myLinks" style={{ display: displayProp }}>
                             <li className={cid === 'fruit-and-veg' ? 'active' : ''}><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
                             <li className={cid === 'bakery-cakes-dairy' ? 'active' : ''}><Link to={'/plp/bakery-cakes-dairy'}>Bakery Cakes and Dairy</Link></li>
@@ -30,7 +30,7 @@ function Plp(props) {
                     <section className="section-products">
                         {products && products.map((obj, i) => {
                             rows.push(<div key={obj.id} className="col span-1-of-4 item">
-                                <h3>{obj.name}</h3>
+                                <h1>{obj.name}</h1>
                                 <div className="item-content">
                                     <div className="item-inner-content">
                                         <img src={obj.imageURL} alt={obj.name} />
@@ -56,7 +56,7 @@ function Plp(props) {
 
 
             </div>
-        </section>
+        </main>
 
     
         <Footer />

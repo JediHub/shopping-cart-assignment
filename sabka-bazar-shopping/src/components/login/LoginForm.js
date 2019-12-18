@@ -67,7 +67,7 @@ class Login extends Component {
     return (
       <div className="container">
         <Header />
-        <section className="section-form">
+        <main className="section-form">
           <div className="row">
           <div className="col span-1-of-2 shopping-form">
               <h1>Login</h1>
@@ -77,6 +77,7 @@ class Login extends Component {
               <form onSubmit={this.handleSubmit} noValidate>
                 <div className="col span-1-of-2">
                   <div className="row form-input-email">
+                    <label for="email"> Email
                     <input
                       type="email"
                       name="email"
@@ -84,15 +85,16 @@ class Login extends Component {
                       size="50"
                       onChange={this.handleChange}
                       aria-required="true"
-                      aria-describedby="email-error"
                       noValidate
                     />
+                    </label>
                     {errors.email && (
                       <span className="error">{errors.email}</span>
                     )}
                   </div>
 
                   <div className="row form-input">
+                    <label for="password"> Password
                     <input
                       type="password"
                       name="password"
@@ -100,9 +102,9 @@ class Login extends Component {
                       size="50"
                       onChange={this.handleChange}
                       aria-required="true"
-                      aria-describedby="password-error"
                       noValidate
                     />
+                    </label>
                     {errors.password && (
                       <span className="error">{errors.password}</span>
                     )}
@@ -115,7 +117,7 @@ class Login extends Component {
               </form>
             </div>
           </div>
-        </section>
+        </main>
         <Footer />
       </div>
     );

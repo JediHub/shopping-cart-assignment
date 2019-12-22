@@ -1,9 +1,9 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 
-import { receivedProductsData } from "./actions";
+import { receivedProductsData, receivedAddToCart } from "./actions";
 import { receiveCategoriesData } from "../home/actions";
-import { REQUEST_PRODUCTS_DATA } from "./constants";
-import { ProductsData, CategoriesData } from './../Api';
+import { REQUEST_PRODUCTS_DATA, REQUEST_ADD_TO_CART } from "./constants";
+import { ProductsData, CategoriesData, postAddtoCartData } from './../Api';
 
 
 function* getProductsData(action) {
@@ -35,9 +35,19 @@ function* getProductsData(action) {
     }
 }
 
+function* postAddtoCart(action) {
+    //console.log('addtoCart Saga',action);
+    const response = yield call(postAddtoCartData, action.payload);
+    console.log('response::', response);
+    if (response.response === 'Success') {
+        console.log('dispatch an action to update cart count state', action.payload);
+        yield put(receivedAddToCart(action.payload));
+    }
+}
 
 
 export function* plpSaga() {
     yield takeEvery(REQUEST_PRODUCTS_DATA, getProductsData);
+    yield takeEvery(REQUEST_ADD_TO_CART, postAddtoCart);
 }
 

@@ -17,11 +17,11 @@ import { Link } from 'react-router-dom';
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 function Home(props) {
-  const { banners, categories } = props;
+  const { banners, categories, cartProducts } = props;
   return (
     
     <div className="container">
-      <Header />
+      <Header cartProducts={cartProducts} />
       <main className="main">
         
           <CarouselProvider

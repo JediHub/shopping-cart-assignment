@@ -64,9 +64,10 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
+    const { cartProducts } = this.props;
     return (
       <div className="container">
-        <Header />
+        <Header cartProducts={cartProducts}/>
         <main className="section-form">
           <div className="row">
           <div className="col span-1-of-2 shopping-form">

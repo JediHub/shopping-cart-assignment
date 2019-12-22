@@ -32,3 +32,17 @@ export const ProductsData = async() => {
         console.log(e);
     }
 }
+
+export const postAddtoCartData = async (data) => {
+    try {
+        const apiRes = await fetch('http://localhost:5000/addToCart', {
+            method: 'post',
+            body: data.id
+        });
+        let resp = await apiRes.json();
+        console.log('add to cart api called response', resp);
+        return resp;
+    } catch (e) {
+        console.log(e);
+    }
+}

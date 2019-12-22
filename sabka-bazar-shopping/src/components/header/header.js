@@ -2,13 +2,25 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/header.scss';
 import "./../../styles/common.scss";
+import Model from "../model";
 import "font-awesome/css/font-awesome.min.css";
 
 function Header(props) {
-  const [display, setDisplay] = useState('none');
+    const { cartProducts } = props;
+    const [display, setDisplay] = useState('none');
+    const [show, setModel] = useState(false);
+   
+
+    let showModal = () => {
+        setModel(true);
+    };
+
+    let hideModal = () => {
+        console.log('handle close clicked');
+        setModel(false);
+    };
 
   function showMobileMenu(e) {
-    e.preventDefault();
     if (display === "block") {
       setDisplay('none');
   } else {
@@ -17,36 +29,31 @@ function Header(props) {
   }
 
   return (
-   
+    <div>
       <header>
-        <div className="topnav">
-          <div className="mobile-logo">
-            <Link to={'/'}><img src="/static/images/logo.png" alt="logo" /></Link>
-              <ul className="myLinks" style={{ display: display}}>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
+         <div className="topnav">
+                <div className="row">
+                    <div className="col sm-7-of-10">
+                        <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo" /></Link>
+                        <ul className="myLinks" style={{ display: display }}>
+                            <li><Link to={'/'}>Home</Link></li>
+                            <li><Link to={'/plp/all'}>Products</Link></li>
+                            <li><Link to={'/login'}>Sign In</Link></li>
+                            <li><Link to={'/register'}>Register</Link></li>
+                        </ul>
+                    </div>
 
-                <li>
-                  <Link to="/plp/all">Products</Link>
-                </li>
+                    <div className="col sm-3-of-10">
+                        <div className="col sm-2-of-3">
+                            <i onClick={showModal} className="m-btn-cart">  <img src={'/static/images/cart.svg'} alt="cart logo" /><span>({cartProducts ? cartProducts.length : 0})</span></i>
+                        </div>
+                        <div className="col sm-1-of-3 m-btn-cart">
+                            <i onClick={() => showMobileMenu()} className="fa fa-bars"></i>
+                        </div>
 
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-
-                <li>
-                  <Link to="/register">Register</Link>
-                </li>
-              </ul>
-            
-            <div>
-              <a href="/#" className="icon" onClick={e => showMobileMenu(e)}>
-                <i className="fa fa-bars"></i>
-              </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
         <div className="flexContainer web-app">
           <div className="flexItem flexContainer flexCenter itemCenter logo">
@@ -76,17 +83,17 @@ function Header(props) {
             </ul>
             </nav>
             <div className="btn-cart flexContainer flexCenter flexEnd">
-            <span className="cart">
-              <Link to={"#"} title="Cart">
-              <img src="/static/images/cart.svg" alt="cart-logo" /> 0 items
-              </Link>
-            </span>
+            <div className="row">
+              <button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} item cart`} onClick={showModal}><img src="/static/images/cart.svg" alt="cart-logo" /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length > 1 ? 'items' : 'item'}</span></button>
+            </div>
             </div>
             </div>
            
         </div>
       </header>
-   
+
+      <Model show={show} handleClose={hideModal} />
+  </div>
   );
 }
 

@@ -24,7 +24,7 @@ function Cart(props) {
         groupedProducts = groupBy(cartProducts, 'id');
     }
 
-    return <div className="shopping-cart" tabindex="0" role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
+    return <div className="shopping-cart" tabIndex="0" role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
         <div className="shopping-cart-contents">
             <div className="shopping-cart-header">
                 <h2 id="dialogTitle">My Cart({cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length > 1 ? 'items' : 'item'} )</h2>

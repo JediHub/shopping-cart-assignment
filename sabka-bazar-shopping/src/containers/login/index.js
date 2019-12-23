@@ -1,4 +1,4 @@
-import Login from '../../components/login/loginForm';
+import Login from '../../components/login/LoginForm';
 import { connect } from "react-redux";
 
 const mapStateToProps = state => ({ cartProducts: state.plp.cartProducts });

@@ -14,6 +14,8 @@
   
   .display-block {
     display: block;
+    position: fixed;
+    z-index: 999;
   }
   
   .display-none {

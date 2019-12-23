@@ -18,7 +18,6 @@
 .slideshow-container {
     position: relative;
     margin: auto;
-    z-index: -1;
   }
 
 .mySlides {
@@ -30,7 +29,6 @@
 
 .slides-dot {
     text-align: center;
-    z-index: 2;
     position: absolute;
     left: 44%;
     bottom: 13%;

@@ -33,7 +33,9 @@ function Plp(props) {
     <Header cartProducts={cartProducts}/>
         <main className="section-plp" id="main">
             <div className="row">
+                
                 <div className="col span-2-of-10 sidebar">
+                <aside>
                     <nav className="topnavside"> 
                     <Link onClick={showMenu} aria-label="Show Menu"><span className="selectedFilter" >{cid.replace(/-/g, ' ').toUpperCase()}</span><img src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" /></Link>
                         <ul className="myLinks" role="menu" style={{ display: displayProp }}>
@@ -42,9 +44,10 @@ function Plp(props) {
                             <li role="menuitem" className={cid === 'beverages' ? 'active' : 'inactive'}><Link to={'/plp/beverages'} title="Beverages" aria-label="Beverages menu item">Beverages</Link></li>
                             <li role="menuitem" className={cid === 'beauty-hygiene' ? 'active' : 'inactive'}><Link to={'/plp/beauty-hygiene'} title="Beauty and Hygiene" aria-label="Beauty and Hygiene menu item">Beauty and Hygiene</Link></li>
                             <li role="menuitem" className={cid === 'baby' ? 'active' : 'inactive'}><Link to={'/plp/baby'} title="Baby Care" aria-label="Baby Care menu item">Baby Care</Link></li>
-                        </ul></nav>
+                        </ul>
+                    </nav>
+                </aside>
                 </div>
-
 
                 <div className="col span-8-of-10 products">
                     <main className="section-products">

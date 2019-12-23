@@ -116,31 +116,36 @@ class Register extends Component {
       <form onSubmit={this.handleSubmit} noValidate>
                 <div className="col span-1-of-2">
                   <div className='row form-input'>
-                  <label for="firstName">First Name<input type='text' name='firstName' size="50" placeholder="First Name" onChange={this.handleChange} aria-required="true" noValidate /></label>
+                  <label for="firstName">First Name</label>
+                  <input type='text' name='firstName' size="50" placeholder="First Name" onChange={this.handleChange} aria-required="true" noValidate />
                   {errors.firstName && 
                 <span className='error'>{errors.firstName}</span>}
                 </div>
                  
                 <div className='row form-input'>
-                <label for="lastName">Last Name<input type='text' name='lastName' size="50" placeholder="Last Name" onChange={this.handleChange} aria-required="true" noValidate /></label>
+                <label for="lastName">Last Name</label>
+                <input type='text' name='lastName' size="50" placeholder="Last Name" onChange={this.handleChange} aria-required="true" noValidate />
                 {errors.lastName && 
                 <span className='error'>{errors.lastName}</span>}
                 </div>
              
                 <div className='row form-input-email'>
-                <label for="email">Email<input type='email' name='email' placeholder="Email" size="50" onChange={this.handleChange} aria-required="true" noValidate /></label>
+                <label for="email">Email</label>
+                <input type='email' name='email' placeholder="Email" size="50" onChange={this.handleChange} aria-required="true" noValidate />
               {errors.email && 
                 <span className='error'>{errors.email}</span>}
                 </div>
 
                  <div className='row form-input'>
-                 <label for="password">Password<input type='password' name='password' placeholder="Password" size="50" onChange={this.handleChange} aria-required="true" noValidate /></label>
+                 <label for="password">Password</label>
+                 <input type='password' name='password' placeholder="Password" size="50" onChange={this.handleChange} aria-required="true" noValidate />
               {errors.password && 
                 <span className='error'>{errors.password}</span>}
                   </div>
 
                   <div className='row form-input'>
-                  <label for="confirmPassword">Confirm Password<input type='password'  name='confirmPassword' placeholder="Confirm Password" size="50" onChange={this.handleChange} aria-required="true" noValidate /></label>
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input type='password'  name='confirmPassword' placeholder="Confirm Password" size="50" onChange={this.handleChange} aria-required="true" noValidate />
               {errors.confirmPassword && 
                 <span className='error'>{errors.confirmPassword}</span>}
               </div>

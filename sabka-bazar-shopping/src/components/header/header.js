@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/header.scss';
-import "./../../styles/common.scss";
+//import "./../../styles/common.scss";
+import "../../styles/Flex.scss";
 import Model from "../model";
 import "font-awesome/css/font-awesome.min.css";
 
@@ -82,10 +83,8 @@ function Header(props) {
               </li>
             </ul>
             </nav>
-            <div className="btn-cart flexContainer flexCenter flexEnd">
-            <div className="row">
+            <div className="flexContainer flexCenter flexEnd">
               <button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} item cart`} onClick={showModal}><img src="/static/images/cart.svg" alt="cart-logo" /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length > 1 ? 'items' : 'item'}</span></button>
-            </div>
             </div>
             </div>
            

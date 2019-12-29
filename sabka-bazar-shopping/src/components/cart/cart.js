@@ -31,7 +31,7 @@ function Cart(props) {
                 <button className="fa fa-times icon-close" aria-label="cart close" onClick={props.handleClose}></button>
             </div>
             <div className="cart-body">
-                <div className="cart-items">
+                <div className="cart-items" aria-label={`cart has ${cartProducts ? cartProducts.length : 0} items`}>
                     {groupedProducts && Object.values(groupedProducts).map((obj, i) => {
                         totalCheckoutPrice += obj[0].price * obj.length;
                         return (

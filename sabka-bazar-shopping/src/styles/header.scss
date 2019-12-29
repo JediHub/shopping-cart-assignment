@@ -6,7 +6,7 @@
   margin: 0;
 }
 
-.web-app {
+.flexContainer.web-app {
     display: none;
 }
 
@@ -66,13 +66,16 @@ header {
     box-shadow: 3px 3px 2px rgb(250, 249, 249);
 }
 
+.logo {
+  padding: 4px;
+}
 
 .topnav {
     display: none;
     margin-left: 20px;
 }
 
-.web-app {
+.flexContainer.web-app {
     display: flex;
 }
 
@@ -86,6 +89,10 @@ header {
     a {
     text-decoration: none;
     color: $color-black;
+    &:hover {
+      text-decoration: underline;
+      color: $color-oldrose;
+    }
     }
   }
  }
@@ -100,6 +107,10 @@ header {
     text-decoration: none;
     color: $color-black;
     padding: 0 7px;
+    &:hover {
+      text-decoration: underline;
+      color: $color-oldrose;
+    }
     }
    }
   }

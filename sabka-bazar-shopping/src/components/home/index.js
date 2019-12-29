@@ -55,27 +55,22 @@ function Home(props) {
           return(
             i%2 === 0 ? 
             <figure key={item.id} className="flexContainer flexEnd home-tile">
-            <div className="flexItem left-image">
             <img src={item.imageUrl} alt={item.key} />
-            </div>
-            <div className="flexItem category-info">
+            <figcaption className="flexItem category-info">
               <h1>{item.name}</h1>
-              <figcaption>{item.description}</figcaption>
+              <p>{item.description.split('\n')}</p>
               <Link to={`/plp/${item.key}`} className="btn-title" title={item.name}>Explore {item.key}</Link>
-            </div>
+            </figcaption>
             </figure>
          
           : 
             <figure  key={item.id} className="flexContainer flexEnd home-tile">
-            <div className="flexItem category-info">
+            <figcaption className=" category-info">
               <h2>{item.name}</h2>
-              <figcaption>{item.description}</figcaption>
-              <Link to={`/plp/${item.key}`}className="btn-title" title={item.name}>Explore {item.key}</Link>
-            </div>
-
-            <div className="flexItem left-image">
+              <p>{item.description}</p>
+              <Link to={`/plp/${item.key}`} className="btn-title" title={item.name}>Explore {item.key}</Link>
+            </figcaption>
                 <img src={item.imageUrl} alt={item.key} />
-            </div>
             </figure>
         )}) }
       </main>

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Header from '../header/header';
 import Footer from '../footer';
 import "../../styles/plp.scss";
+//import "../../styles/common.scss";
+import "../../styles/Flex.scss";
 import { Link } from 'react-router-dom';
-import { chunk } from 'lodash';
 
 
 function Plp(props) {
@@ -14,11 +15,13 @@ function Plp(props) {
 
 
     function showMenu() {
+        if (window.innerWidth < 768) {
         if (displayProp === "block") {
             setDisplayProp('none');
         } else {
             setDisplayProp('block');
         }
+     }
     }
 
     useEffect(() => {
@@ -28,17 +31,44 @@ function Plp(props) {
     function buyNow(product) {
         props.requestaddToCart(product);
     }
-    let rows = [];
+
+    let rows = products && products.length ? 
+    (
+        products && products.map((obj, i) => {
+            return (
+            <div key={obj.id} className="item">
+                <h1>List of products based on categories</h1>
+                <h2>{obj.name}</h2>
+                <div className="flexContainer flexColumnDirection flexRowDirection">
+                    <div className="item-inner-content">
+                        <img src={obj.imageURL} alt={obj.name} />
+                    </div>
+                    <div className="item-inner-content">
+                        <p>{obj.description}</p>
+                        <span className="price-tag"> MRP Rs. {obj.price}</span>
+                        <button className="buyNow-btn" onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</button>
+                    </div>
+                </div>
+                <button className="buyNow-mobile-btn" onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ Rs.{obj.price}</button>
+            </div>
+            )
+        }) 
+    ):
+        (
+            <p>Nothing.</p>
+        )
+
+    console.log(rows);
+
     return <div className="container">
     <Header cartProducts={cartProducts}/>
         <main className="section-plp" id="main">
-            <div className="row">
+        <div className="flexContainer">
                 
-                <div className="col span-2-of-10 sidebar">
-                <aside>
+            <aside className="sidebar">   
                     <nav className="topnavside"> 
-                    <Link onClick={showMenu} aria-label="Show Menu"><span className="selectedFilter" >{cid.replace(/-/g, ' ').toUpperCase()}</span><img src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" /></Link>
-                        <ul className="myLinks" role="menu" style={{ display: displayProp }}>
+                    <Link to={'#'} className="showMenu" onClick={showMenu} aria-label="Show Menu"><span className="selectedFilter" >{cid.replace(/-/g, ' ').toUpperCase()}</span><img src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" /></Link>
+                        <ul className="myLinks" role="menu" style={{ display: displayProp }} onClick={showMenu}>
                             <li role="menuitem" className={cid === 'fruit-and-veg' ? 'active' : 'inactive'}><Link to={'/plp/fruit-and-veg'} title="Fruits &amp; Vegitables" aria-label="Fruits &amp; Vegetables menu item">Fruits &amp; Vegitables</Link></li>
                             <li role="menuitem" className={cid === 'bakery-cakes-dairy' ? 'active' : 'inactive'}><Link to={'/plp/bakery-cakes-dairy'} title="Bakery Cakes and dairy" aria-label="Bakery cakes and dairy menu item">Bakery Cakes and Dairy</Link></li>
                             <li role="menuitem" className={cid === 'beverages' ? 'active' : 'inactive'}><Link to={'/plp/beverages'} title="Beverages" aria-label="Beverages menu item">Beverages</Link></li>
@@ -46,39 +76,14 @@ function Plp(props) {
                             <li role="menuitem" className={cid === 'baby' ? 'active' : 'inactive'}><Link to={'/plp/baby'} title="Baby Care" aria-label="Baby Care menu item">Baby Care</Link></li>
                         </ul>
                     </nav>
-                </aside>
-                </div>
+              
+            </aside>
 
-                <div className="col span-8-of-10 products">
-                    <main className="section-products">
-                        {products && products.map((obj, i) => {
-                            rows.push(<div key={obj.id} className="col span-1-of-4 item">
-                                <h1>{obj.name}</h1>
-                                <div className="item-content">
-                                    <div className="item-inner-content">
-                                        <img src={obj.imageURL} alt={obj.name} />
-                                    </div>
-                                    <div className="item-inner-content">
-                                        <p>{obj.description}</p>
-                                        <div className="price-tag">
-                                            MRP Rs. {obj.price} <button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>);
-                            return null;
-                        })}
-
-                        {(chunk(rows, 4).map(function (group, i) {
-                            return <div key={i} className="row">{group}</div>
-                        }))}
-
-                    </main>
-                </div>
-
-
-
+            <div className="flexContainer flexRow products">
+            {rows}
             </div>
+
+        </div>
         </main>
 
     

@@ -1,0 +1,72 @@
+
+    
+@media only screen and (min-width: 768px){
+  
+    .flexContainer {
+    display: flex;
+    }
+
+    .flexItem {
+    flex: 1;
+    }
+
+    .flexStart {
+    justify-content: flex-start;
+    }
+
+    .flexEnd {
+    align-items: flex-end;
+    }
+
+    .flexCenter {
+    justify-content: center;
+    }
+
+    .itemCenter {
+    align-items: center;
+    }
+
+    .flexRowDirection {
+        flex-direction: row;
+    }
+
+    .flexRow {
+        flex-flow: row wrap;
+    }
+
+}
+
+@media only screen and (min-width: 1024px){
+
+    .flexContainer {
+        display: flex;
+        }
+    
+        .flexItem {
+        flex: 1;
+        }
+    
+        .flexStart {
+        justify-content: flex-start;
+        }
+    
+        .flexEnd {
+        align-items: flex-end;
+        }
+    
+        .flexCenter {
+        justify-content: center;
+        }
+    
+        .itemCenter {
+        align-items: center;
+        }
+    
+        .flexColumnDirection {
+            flex-direction: column;
+        }
+    
+        .flexRow {
+            flex-flow: row wrap;
+        }
+}

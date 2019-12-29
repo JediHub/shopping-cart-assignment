@@ -9,6 +9,11 @@
     text-align: center;
     border-bottom: 2px solid $color-lightgray;
     padding-bottom: 20px;
+      img {
+      width: auto;
+      height: 140px;
+      margin-bottom: 12px;
+      }
 }
 
 .carousel {
@@ -86,28 +91,30 @@
   }
 
 .category-info {
-    text-align: center;
-    h2 {
-    margin-left: 4% ;
-    font-size: 85%;
-    }
-    figcaption {
-      margin-top: 4%;
-      font-size: 65%;
-    }
-}
-
+  text-align: center;
+  flex: 1 0 79%;
 .btn-title {
     display: inline-block;
     background-color: $color-oldrose;
-    padding: 2%;
+    padding: 1%;
     text-decoration: none;
     color: $color-white;
     margin-left: 4%;
     margin-top: 3%;
+  }
+h1 {
+  margin-left: 4%;
+  font-size: 85%;
+  }
+  h2 {
+  margin-left: 4%;
+  font-size: 85%;
+  }
+  p {
+    font-size: 65%;
+  }
+
 }
-
-
 @media only screen and (min-width: 768px) {
 
   .home-tile:last-child {

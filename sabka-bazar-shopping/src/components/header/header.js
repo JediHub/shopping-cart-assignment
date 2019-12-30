@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/header.scss';
-//import "./../../styles/common.scss";
 import "../../styles/Flex.scss";
 import Model from "../model";
 import "font-awesome/css/font-awesome.min.css";
@@ -74,20 +73,19 @@ function Header(props) {
           </nav>
           <div className="flexItem" >
           <nav aria-label="top navigation" className="top-nav">
-            <ul role="menu" className="flexContainer flexCenter">
+            <ul role="menu" className="flexTop flexContainer flexCenter">
               <li role="menuitem">
-                <Link to="/login" aria-label="Sign In Menu Item" title="Sign In">Sign in</Link>
+                <Link to="/login" aria-label="Sign In Menu Item" title="Sign In">SignIn</Link>
               </li>
               <li role="menuitem">
                 <Link to="/Register" aria-label="Sign Up Menu Item" title="Sign Up">Register</Link>
               </li>
             </ul>
             </nav>
-            <div className="flexContainer flexCenter flexEnd">
+            <div className="flexCart flexContainer flexCenter flexEnd">
               <button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} item cart`} onClick={showModal}><img src="/static/images/cart.svg" alt="cart-logo" /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length > 1 ? 'items' : 'item'}</span></button>
             </div>
             </div>
-           
         </div>
       </header>
 

@@ -1,10 +1,4 @@
 
-    
-@media only screen and (min-width: 768px){
-  
-    .flexContainer {
-    display: flex;
-    }
 
     .flexItem {
     flex: 1;
@@ -18,8 +12,26 @@
     align-items: flex-end;
     }
 
-    .flexCenter {
-    justify-content: center;
+    
+@media only screen and (min-width: 768px){
+    .flexTop {
+        justify-content: flex-end;
+    }
+
+    .flexCart {
+        justify-content: flex-end;
+    }
+
+    .flexContainer {
+    display: flex;
+    }
+
+    .flexStart {
+    justify-content: flex-start;
+    }
+
+    .flexEnd {
+    align-items: flex-end;
     }
 
     .itemCenter {
@@ -38,10 +50,6 @@
 
 @media only screen and (min-width: 1024px){
 
-    .flexContainer {
-        display: flex;
-        }
-    
         .flexItem {
         flex: 1;
         }
@@ -53,15 +61,7 @@
         .flexEnd {
         align-items: flex-end;
         }
-    
-        .flexCenter {
-        justify-content: center;
-        }
-    
-        .itemCenter {
-        align-items: center;
-        }
-    
+  
         .flexColumnDirection {
             flex-direction: column;
         }
@@ -69,4 +69,5 @@
         .flexRow {
             flex-flow: row wrap;
         }
+
 }

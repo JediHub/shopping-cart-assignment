@@ -67,7 +67,7 @@ header {
 }
 
 .logo {
-  padding: 4px;
+  padding: 6px;
 }
 
 .topnav {
@@ -77,6 +77,8 @@ header {
 
 .flexContainer.web-app {
     display: flex;
+    max-width: 1170px;  
+    margin: 0 auto;       
 }
 
 .header-nav {
@@ -84,21 +86,19 @@ header {
     li {
     list-style: none;
     float: left;
-    padding: 20px;
+    padding: 20px 20px 20px 0;
     margin-top: 28px;
     a {
     text-decoration: none;
     color: $color-black;
-    &:hover {
-      text-decoration: underline;
-      color: $color-oldrose;
-    }
+    font-size: 15px;
     }
   }
  }
 }
 
 .top-nav {
+  margin: 0 0 2px 45px;
   ul { 
     li {
     list-style: none;
@@ -107,10 +107,7 @@ header {
     text-decoration: none;
     color: $color-black;
     padding: 0 7px;
-    &:hover {
-      text-decoration: underline;
-      color: $color-oldrose;
-    }
+    font-size: 15px;
     }
    }
   }
@@ -123,6 +120,10 @@ header {
 }
 
 .btn-cart {
+  width: 48%;
+  height: 52px;
+  border: 1px solid #F4F4F4;
+  background-color: #F4F4F4;
   img {
   width: 30px;
   height: 30px;
@@ -134,4 +135,23 @@ header {
 }
 
 
+}
+
+@media only screen and (min-width: 1024px) {
+ 
+.btn-cart {
+  width: 30%;
+  height: 52px;
+  border: 1px solid #F4F4F4;
+  background-color: #F4F4F4;
+  margin-right: 30px;
+  img {
+    width: 40px;
+    height: 30px;
+  }
+  a {
+  text-decoration: none;
+  color: $color-black;
+  }
+}
 }

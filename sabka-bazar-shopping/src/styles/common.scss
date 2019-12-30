@@ -21,7 +21,7 @@ input {
     background: transparent;
     border-bottom: 1px solid $color-lightgray;
     padding-top: 10px; 
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 20px;
     width: 90%;
     &:hover {
@@ -51,7 +51,7 @@ footer {
     background-color: $color-gainsboro;
     opacity: 0.7;
     p {
-    padding: 20px;
+    padding: 5px;  //20
     font-size: 11px; 
     }
 }

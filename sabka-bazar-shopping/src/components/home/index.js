@@ -2,7 +2,8 @@ import React from "react";
 //import Header from "../header";
 import Header from '../header/header'
 import Footer from "../footer";
-import "./../../styles/common.scss";
+//import "./../../styles/common.scss";
+import "../../styles/home.scss";
 import './../../styles/home.scss';
 
 import {
@@ -20,7 +21,7 @@ function Home(props) {
   const { banners, categories, cartProducts } = props;
   return (
     
-    <div className="container">
+    <div className="container desktop">
       <Header cartProducts={cartProducts} />
       <main className="main">
         

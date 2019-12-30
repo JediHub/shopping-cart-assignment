@@ -58,7 +58,7 @@ function Header(props) {
         <div className="flexContainer web-app">
           <div className="flexItem flexContainer flexCenter itemCenter logo">
             
-              <img src="/static/images/logo.png" alt="sabka-bazar-logo" />
+              <Link to={"#"}><img src="/static/images/logo.png" alt="sabka-bazar-logo" /></Link>
            
           </div>
           <nav role="navigation" aria-label="header navigation" className="flexItem  header-nav">

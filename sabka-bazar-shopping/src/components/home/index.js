@@ -21,7 +21,7 @@ function Home(props) {
   const { banners, categories, cartProducts } = props;
   return (
     
-    <div className="container desktop">
+    <div className="container">
       <Header cartProducts={cartProducts} />
       <main className="main">
         

@@ -58,8 +58,6 @@ function Plp(props) {
             <p>Nothing.</p>
         )
 
-    console.log(rows);
-
     return <div className="container">
     <Header cartProducts={cartProducts}/>
         <main className="section-plp" id="main">

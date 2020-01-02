@@ -31,10 +31,10 @@ function Header(props) {
   return (
     <div>
       <header>
-         <div className="topnav">
-                <div className="row">
-                    <div className="col sm-7-of-10">
-                        <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo" /></Link>
+         <div className="mobile-navbar">
+                <div className="flexContainer mobile-nav">
+                    <div className="mobile-logo">
+                        <Link to={'/'} title="logo"><img src={'/static/images/logo.png'} alt="logo" /></Link>
                         <ul className="myLinks" style={{ display: display }}>
                             <li><Link to={'/'}>Home</Link></li>
                             <li><Link to={'/plp/all'}>Products</Link></li>
@@ -42,23 +42,21 @@ function Header(props) {
                             <li><Link to={'/register'}>Register</Link></li>
                         </ul>
                     </div>
-
-                    <div className="col sm-3-of-10">
-                        <div className="col sm-2-of-3">
+           
+                        <div className="mobile-cart">
                             <i onClick={showModal} className="m-btn-cart">  <img src={'/static/images/cart.svg'} alt="cart logo" /><span>({cartProducts ? cartProducts.length : 0})</span></i>
                         </div>
-                        <div className="col sm-1-of-3 m-btn-cart">
+                        <div className="mobile-menu">
                             <i onClick={() => showMobileMenu()} className="fa fa-bars"></i>
                         </div>
 
-                    </div>
                 </div>
             </div>
 
         <div className="flexContainer web-app">
           <div className="flexItem flexContainer flexCenter itemCenter logo">
             
-              <Link to={"#"}><img src="/static/images/logo.png" alt="sabka-bazar-logo" /></Link>
+              <Link to={"#"} title="logo"><img src="/static/images/logo.png" alt="sabka-bazar-logo" /></Link>
            
           </div>
           <nav role="navigation" aria-label="header navigation" className="flexItem  header-nav">
@@ -72,7 +70,7 @@ function Header(props) {
             </ul>
           </nav>
           <div className="flexItem" >
-          <nav aria-label="top navigation" className="top-nav">
+          <nav aria-label="site navigation" className="top-nav">
             <ul role="menu" className="flexTop flexContainer flexCenter">
               <li role="menuitem">
                 <Link to="/login" aria-label="Sign In Menu Item" title="Sign In">SignIn</Link>
@@ -83,7 +81,7 @@ function Header(props) {
             </ul>
             </nav>
             <div className="flexCart flexContainer flexCenter flexEnd">
-              <button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} item cart`} onClick={showModal}><img src="/static/images/cart.svg" alt="cart-logo" /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length > 1 ? 'items' : 'item'}</span></button>
+              <button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} item cart`} onClick={showModal}><img src="/static/images/cart.svg" alt="cart-logo" /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length === 1 ? 'item' : 'items'}</span></button>
             </div>
             </div>
         </div>

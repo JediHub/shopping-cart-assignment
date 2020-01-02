@@ -11,9 +11,22 @@
 }
 
 // responsive header
-  .topnav {
-    display: block;
+  .mobile-navbar {
+    display: block;   //comment
     overflow: hidden;
+    .mobile-nav {
+      display: flex;
+    }
+    .mobile-logo {
+      flex: 1 0 70%;
+    }
+    .mobile-cart {
+      flex: 1 0 16%;
+    }
+    .mobile-menu {
+      flex: 1 0 14%;
+      padding: 4% 4% 1% 4%;
+    }
     img{
       width: 30%;
     }
@@ -70,7 +83,7 @@ header {
   padding: 6px;
 }
 
-.topnav {
+.mobile-navbar {
     display: none;
     margin-left: 20px;
 }

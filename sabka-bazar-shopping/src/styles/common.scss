@@ -51,8 +51,9 @@ footer {
     background-color: $color-gainsboro;
     opacity: 0.7;
     p {
-    padding: 5px;  //20
-    font-size: 11px; 
+        padding: 5px;
+        margin-left: 10%;
+        font-size: 9px;
     }
 }
 
@@ -150,7 +151,7 @@ label {
         p {
         padding: 20px;
         margin-left: 10%;
-        font-size: 15px;
+        font-size: 14px;
         }
     }
  

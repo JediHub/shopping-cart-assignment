@@ -39,7 +39,7 @@ function Plp(props) {
             <div key={obj.id} className="item">
                 <h1>List of products based on categories</h1>
                 <h2>{obj.name}</h2>
-                <div className="flexContainer flexColumnDirection flexRowDirection">
+                <div className="flexContainer flexColumnDirection flexRowDirection item-wrapper">
                     <div className="item-inner-content">
                         <img src={obj.imageURL} alt={obj.name} />
                     </div>
@@ -55,7 +55,7 @@ function Plp(props) {
         }) 
     ):
         (
-            <p>Nothing.</p>
+            <p className="no-items">Try again after some time.</p>
         )
 
     return <div className="container">

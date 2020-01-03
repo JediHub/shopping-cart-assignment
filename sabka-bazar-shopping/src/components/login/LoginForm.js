@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../header/header";
 import Footer from "../footer";
 import { Link } from "react-router-dom";
+import FormInput from '../shared/FormInput/FormInput';
 import "../../styles/common.scss";
 
 const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
@@ -77,39 +78,33 @@ class Login extends Component {
             <div className="row">
               <form onSubmit={this.handleSubmit} noValidate>
                 <div className="col span-1-of-2">
-                  <div className="row form-input-email">
-                    <label for="email"> Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      size="50"
-                      onChange={this.handleChange}
-                      aria-required="true"
-                      noValidate
-                    />
-                    
-                    {errors.email && (
-                      <span className="error">{errors.email}</span>
-                    )}
-                  </div>
+                  <FormInput
+                    label="Email"
+                    name="email"
+                    type="text"
+                    placeholder="Email"
+                    size="50"
+                    onChange={this.handleChange}
+                    value={this.state.email}
+                    className="input"
+                    aria-required="true"
+                    error={errors.email}
+                    noValidate
+                  />
 
-                  <div className="row form-input">
-                    <label for="password"> Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                      size="50"
-                      onChange={this.handleChange}
-                      aria-required="true"
-                      noValidate
-                    />
-                    
-                    {errors.password && (
-                      <span className="error">{errors.password}</span>
-                    )}
-                  </div>
+                  <FormInput
+                    label="Password"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    size="50"
+                    onChange={this.handleChange}
+                    value={this.state.password}
+                    className="input"
+                    aria-required="true"
+                    error={errors.password}
+                    noValidate
+                  />
 
                   <div className="row form-input">
                   <Link to={'/'}><button type="submit" className="btn-login">Login</button></Link>

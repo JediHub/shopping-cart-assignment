@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from "../header/header";
 import Footer from "../footer";
+import FormInput from '../shared/FormInput/FormInput';
 import '../../styles/register.scss'
 import './../../styles/Grid.scss';
 
@@ -115,40 +116,75 @@ class Register extends Component {
       <div className="row">
       <form onSubmit={this.handleSubmit} noValidate>
                 <div className="col span-1-of-2">
-                  <div className='row form-input'>
-                  <label for="firstName">First Name</label>
-                  <input type='text' name='firstName' size="50" placeholder="First Name" onChange={this.handleChange} aria-required="true" noValidate />
-                  {errors.firstName && 
-                <span className='error'>{errors.firstName}</span>}
-                </div>
-                 
-                <div className='row form-input'>
-                <label for="lastName">Last Name</label>
-                <input type='text' name='lastName' size="50" placeholder="Last Name" onChange={this.handleChange} aria-required="true" noValidate />
-                {errors.lastName && 
-                <span className='error'>{errors.lastName}</span>}
-                </div>
-             
-                <div className='row form-input-email'>
-                <label for="email">Email</label>
-                <input type='email' name='email' placeholder="Email" size="50" onChange={this.handleChange} aria-required="true" noValidate />
-              {errors.email && 
-                <span className='error'>{errors.email}</span>}
-                </div>
+                <FormInput
+                    label="First Name"
+                    name="firstName"
+                    type="text"
+                    placeholder="First Name"
+                    size="50"
+                    onChange={this.handleChange}
+                    value={this.state.firstName}
+                    className="input"
+                    aria-required="true"
+                    error={errors.firstName}
+                    noValidate
+                  />
 
-                 <div className='row form-input'>
-                 <label for="password">Password</label>
-                 <input type='password' name='password' placeholder="Password" size="50" onChange={this.handleChange} aria-required="true" noValidate />
-              {errors.password && 
-                <span className='error'>{errors.password}</span>}
-                  </div>
+                <FormInput
+                    label="Last Name"
+                    name="lastName"
+                    type="text"
+                    placeholder="Last Name"
+                    size="50"
+                    onChange={this.handleChange}
+                    value={this.state.lastName}
+                    className="input"
+                    aria-required="true"
+                    error={errors.lastName}
+                    noValidate
+                />
+                
+                <FormInput
+                    label="Email"
+                    name="email"
+                    type="text"
+                    placeholder="Email"
+                    size="50"
+                    onChange={this.handleChange}
+                    value={this.state.email}
+                    className="input"
+                    aria-required="true"
+                    error={errors.email}
+                    noValidate
+                />
 
-                  <div className='row form-input'>
-                  <label for="confirmPassword">Confirm Password</label>
-                  <input type='password'  name='confirmPassword' placeholder="Confirm Password" size="50" onChange={this.handleChange} aria-required="true" noValidate />
-              {errors.confirmPassword && 
-                <span className='error'>{errors.confirmPassword}</span>}
-              </div>
+                <FormInput
+                    label="Password"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    size="50"
+                    onChange={this.handleChange}
+                    value={this.state.password}
+                    className="input"
+                    aria-required="true"
+                    error={errors.password}
+                    noValidate
+                />
+
+                <FormInput
+                    label="Confirm Password"
+                    name="confirmPassword"
+                    type="password"
+                    placeholder="Confirm Password"
+                    size="50"
+                    onChange={this.handleChange}
+                    value={this.state.confirmPassword}
+                    className="input"
+                    aria-required="true"
+                    error={errors.confirmPassword}
+                    noValidate
+                />
              
               <div className="row form-input">
              <button type="submit" value="Submit" className="btn-login">Signup</button>

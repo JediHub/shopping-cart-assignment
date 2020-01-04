@@ -2,6 +2,7 @@ import React from "react";
 //import Header from "../header";
 import Header from '../header/header'
 import Footer from "../footer";
+import Anchor from '../shared/Anchor/Anchor';
 //import "./../../styles/common.scss";
 import "../../styles/home.scss";
 import './../../styles/home.scss';
@@ -14,7 +15,6 @@ import {
   ButtonBack,
   ButtonNext
 } from "pure-react-carousel";
-import { Link } from 'react-router-dom';
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 function Home(props) {
@@ -60,16 +60,28 @@ function Home(props) {
             <figcaption className="flexItem category-info">
               <h1>{item.name}</h1>
               <p>{item.description.split('\n')}</p>
-              <Link to={`/plp/${item.key}`} className="btn-title" title={item.name}>Explore {item.key}</Link>
+              <Anchor
+              to={`/plp/${item.key}`}
+              className="btn-title"
+              title={item.name}
+              >
+                Explore {item.key}
+              </Anchor>
             </figcaption>
             </figure>
          
           : 
-            <figure  key={item.id} className="flexContainer flexEnd home-tile">
+            <figure key={item.id} className="flexContainer flexEnd home-tile">
             <figcaption className=" category-info">
               <h2>{item.name}</h2>
               <p>{item.description}</p>
-              <Link to={`/plp/${item.key}`} className="btn-title" title={item.name}>Explore {item.key}</Link>
+              <Anchor
+              to={`/plp/${item.key}`}
+              className="btn-title"
+              title={item.name}
+              >
+                Explore {item.key}
+              </Anchor>
             </figcaption>
                 <img src={item.imageUrl} alt={item.key} />
             </figure>

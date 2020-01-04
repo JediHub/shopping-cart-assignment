@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from "../header/header";
 import Footer from "../footer";
 import FormInput from '../shared/FormInput/FormInput';
+import Button from '../shared/Button/Button';
 import '../../styles/register.scss'
 import './../../styles/Grid.scss';
 
@@ -121,7 +122,7 @@ class Register extends Component {
                     name="firstName"
                     type="text"
                     placeholder="First Name"
-                    size="50"
+                    size={50}
                     onChange={this.handleChange}
                     value={this.state.firstName}
                     className="input"
@@ -135,7 +136,7 @@ class Register extends Component {
                     name="lastName"
                     type="text"
                     placeholder="Last Name"
-                    size="50"
+                    size={50}
                     onChange={this.handleChange}
                     value={this.state.lastName}
                     className="input"
@@ -149,7 +150,7 @@ class Register extends Component {
                     name="email"
                     type="text"
                     placeholder="Email"
-                    size="50"
+                    size={50}
                     onChange={this.handleChange}
                     value={this.state.email}
                     className="input"
@@ -163,7 +164,7 @@ class Register extends Component {
                     name="password"
                     type="password"
                     placeholder="Password"
-                    size="50"
+                    size={50}
                     onChange={this.handleChange}
                     value={this.state.password}
                     className="input"
@@ -177,7 +178,7 @@ class Register extends Component {
                     name="confirmPassword"
                     type="password"
                     placeholder="Confirm Password"
-                    size="50"
+                    size={50}
                     onChange={this.handleChange}
                     value={this.state.confirmPassword}
                     className="input"
@@ -187,7 +188,7 @@ class Register extends Component {
                 />
              
               <div className="row form-input">
-             <button type="submit" value="Submit" className="btn-login">Signup</button>
+             <Button type="submit" value="Submit" className="btn-login">Signup</Button>
              </div>
            </div>
           </form>

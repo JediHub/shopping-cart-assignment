@@ -4,6 +4,7 @@ import groupBy from 'lodash.groupby';
 import Lineitem from './lineItem';
 import Footer from './footer';
 import CartOffer from './cartOffer';
+import Button from '../shared/Button/Button';
 import "font-awesome/css/font-awesome.min.css";
 
 function Cart(props) {
@@ -28,7 +29,7 @@ function Cart(props) {
         <div className="shopping-cart-contents">
             <div className="shopping-cart-header">
                 <h2 id="dialogTitle">My Cart({cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length === 1 ? 'item' : 'items'} )</h2>
-                <button className="fa fa-times icon-close" aria-label="cart close" onClick={props.handleClose}></button>
+                <Button className="fa fa-times icon-close" aria-label="cart close" onClick={props.handleClose}></Button>
             </div>
             <div className="cart-body">
                 <div className="cart-items" aria-label={`cart has ${cartProducts ? cartProducts.length : 0} items`}>

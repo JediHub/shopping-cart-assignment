@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Header from '../header/header';
 import Footer from '../footer';
+import Anchor from '../shared/Anchor/Anchor';
+import Button from '../shared/Button/Button';
 import "../../styles/plp.scss";
 //import "../../styles/common.scss";
 import "../../styles/Flex.scss";
-import { Link } from 'react-router-dom';
 
 
 function Plp(props) {
@@ -46,10 +47,10 @@ function Plp(props) {
                     <div className="item-inner-content">
                         <p>{obj.description}</p>
                         <span className="price-tag"> MRP Rs. {obj.price}</span>
-                        <button className="buyNow-btn" onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</button>
+                        <Button className="buyNow-btn" onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</Button>
                     </div>
                 </div>
-                <button className="buyNow-mobile-btn" onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ Rs.{obj.price}</button>
+                <Button className="buyNow-mobile-btn" onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ Rs.{obj.price}</Button>
             </div>
             )
         }) 
@@ -65,13 +66,16 @@ function Plp(props) {
                 
             <aside className="sidebar">   
                     <nav className="topnavside"> 
-                    <Link to={'#'} className="showMenu" onClick={showMenu} aria-label="Show Menu"><span className="selectedFilter" >{cid.replace(/-/g, ' ').toUpperCase()}</span><img src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" /></Link>
+                    <Anchor to="#" className="showMenu" title={cid.replace(/-/g, ' ').toLowerCase()} onClick={showMenu} aria-label="Show Menu">
+                    <span className="selectedFilter" >{cid.replace(/-/g, ' ').toUpperCase()}</span>
+                    <img src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" />
+                    </Anchor>
                         <ul className="myLinks" role="menu" style={{ display: displayProp }} onClick={showMenu}>
-                            <li role="menuitem" className={cid === 'fruit-and-veg' ? 'active' : 'inactive'}><Link to={'/plp/fruit-and-veg'} title="Fruits &amp; Vegitables" aria-label="Fruits &amp; Vegetables menu item">Fruits &amp; Vegitables</Link></li>
-                            <li role="menuitem" className={cid === 'bakery-cakes-dairy' ? 'active' : 'inactive'}><Link to={'/plp/bakery-cakes-dairy'} title="Bakery Cakes and dairy" aria-label="Bakery cakes and dairy menu item">Bakery Cakes and Dairy</Link></li>
-                            <li role="menuitem" className={cid === 'beverages' ? 'active' : 'inactive'}><Link to={'/plp/beverages'} title="Beverages" aria-label="Beverages menu item">Beverages</Link></li>
-                            <li role="menuitem" className={cid === 'beauty-hygiene' ? 'active' : 'inactive'}><Link to={'/plp/beauty-hygiene'} title="Beauty and Hygiene" aria-label="Beauty and Hygiene menu item">Beauty and Hygiene</Link></li>
-                            <li role="menuitem" className={cid === 'baby' ? 'active' : 'inactive'}><Link to={'/plp/baby'} title="Baby Care" aria-label="Baby Care menu item">Baby Care</Link></li>
+                            <li role="menuitem" className={cid === 'fruit-and-veg' ? 'active' : 'inactive'}><Anchor to={'/plp/fruit-and-veg'} title="Fruits &amp; Vegitables" aria-label="Fruits &amp; Vegetables menu item">Fruits &amp; Vegitables</Anchor></li>
+                            <li role="menuitem" className={cid === 'bakery-cakes-dairy' ? 'active' : 'inactive'}><Anchor to={'/plp/bakery-cakes-dairy'} title="Bakery Cakes and dairy" aria-label="Bakery cakes and dairy menu item">Bakery Cakes and Dairy</Anchor></li>
+                            <li role="menuitem" className={cid === 'beverages' ? 'active' : 'inactive'}><Anchor to={'/plp/beverages'} title="Beverages" aria-label="Beverages menu item">Beverages</Anchor></li>
+                            <li role="menuitem" className={cid === 'beauty-hygiene' ? 'active' : 'inactive'}><Anchor to={'/plp/beauty-hygiene'} title="Beauty and Hygiene" aria-label="Beauty and Hygiene menu item">Beauty and Hygiene</Anchor></li>
+                            <li role="menuitem" className={cid === 'baby' ? 'active' : 'inactive'}><Anchor to={'/plp/baby'} title="Baby Care" aria-label="Baby Care menu item">Baby Care</Anchor></li>
                         </ul>
                     </nav>
               

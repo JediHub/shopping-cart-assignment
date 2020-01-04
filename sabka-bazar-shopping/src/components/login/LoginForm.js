@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Header from "../header/header";
 import Footer from "../footer";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import FormInput from '../shared/FormInput/FormInput';
+import Anchor from '../shared/Anchor/Anchor';
+import Button from '../shared/Button/Button';
 import "../../styles/common.scss";
 
 const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
@@ -83,7 +85,7 @@ class Login extends Component {
                     name="email"
                     type="text"
                     placeholder="Email"
-                    size="50"
+                    size={50}
                     onChange={this.handleChange}
                     value={this.state.email}
                     className="input"
@@ -97,7 +99,7 @@ class Login extends Component {
                     name="password"
                     type="password"
                     placeholder="Password"
-                    size="50"
+                    size={50}
                     onChange={this.handleChange}
                     value={this.state.password}
                     className="input"
@@ -107,7 +109,9 @@ class Login extends Component {
                   />
 
                   <div className="row form-input">
-                  <Link to={'/'}><button type="submit" className="btn-login">Login</button></Link>
+                  <Anchor to="#" title="Login">
+                  <Button type="submit" className="btn-login">Login</Button>
+                  </Anchor>
                   </div>
                 </div>
               </form>

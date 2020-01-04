@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import '../../styles/header.scss';
 import "../../styles/Flex.scss";
 import Model from "../model";
+import Anchor from '../shared/Anchor/Anchor';
+import Button from '../shared/Button/Button';
 import "font-awesome/css/font-awesome.min.css";
 
 function Header(props) {
@@ -56,16 +58,18 @@ function Header(props) {
         <div className="flexContainer web-app">
           <div className="flexItem flexContainer flexCenter itemCenter logo">
             
-              <Link to={"#"} title="logo"><img src="/static/images/logo.png" alt="sabka-bazar-logo" /></Link>
+              <Anchor to="#" title="logo">
+              <img src="/static/images/logo.png" alt="sabka-bazar-logo" />
+              </Anchor>
            
           </div>
           <nav role="navigation" aria-label="header navigation" className="flexItem  header-nav">
             <ul role="menu">
               <li role="menuitem">
-                <Link to="/" aria-label="Home Menu Item" title="Home">Home</Link>
+                <Anchor to="/" aria-label="Home Menu Item" title="Home">Home</Anchor>
               </li>
               <li role="menuitem">
-                <Link to="/plp/all" aria-label="Products Menu Item" title="Products">Products</Link>
+                <Anchor to="/plp/all" aria-label="Products Menu Item" title="Products">Products</Anchor>
               </li>
             </ul>
           </nav>
@@ -73,15 +77,18 @@ function Header(props) {
           <nav aria-label="site navigation" className="top-nav">
             <ul role="menu" className="flexTop flexContainer flexCenter">
               <li role="menuitem">
-                <Link to="/login" aria-label="Sign In Menu Item" title="Sign In">SignIn</Link>
+                <Anchor to="/login" aria-label="SignIn Menu Item" title="SignIn">SignIn</Anchor>
               </li>
               <li role="menuitem">
-                <Link to="/Register" aria-label="Sign Up Menu Item" title="Sign Up">Register</Link>
+                <Anchor to="/Register" aria-label="Register Menu Item" title="Register">Register</Anchor>
               </li>
             </ul>
             </nav>
             <div className="flexCart flexContainer flexCenter flexEnd">
-              <button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} item cart`} onClick={showModal}><img src="/static/images/cart.svg" alt="cart-logo" /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length === 1 ? 'item' : 'items'}</span></button>
+              <Button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} items cart`} onClick={showModal}>
+              <img src="/static/images/cart.svg" alt="cart-logo" />
+              <span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length === 1 ? 'item' : 'items'}</span>
+              </Button>
             </div>
             </div>
         </div>

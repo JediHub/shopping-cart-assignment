@@ -15,26 +15,26 @@
     margin: 0 auto;
 }
 
-input {
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-bottom: 1px solid $color-lightgray;
-    padding-top: 10px; 
-    font-size: 14px;
-    margin-bottom: 20px;
-    width: 90%;
-    &:hover {
-    outline: 0;
-    background: transparent;
-    border-bottom: 2px solid $color-denim;
-    }
-    &:active {
-    outline: 0;
-    background: transparent;
-    border-bottom: 2px solid $color-denim;
-    }
-}
+// input {
+//     border: 0;
+//     outline: 0;
+//     background: transparent;
+//     border-bottom: 1px solid $color-lightgray;
+//     padding-top: 10px; 
+//     font-size: 14px;
+//     //margin-bottom: 20px;
+//     width: 90%;
+//     &:hover {
+//     outline: 0;
+//     background: transparent;
+//     border-bottom: 2px solid $color-denim;
+//     }
+//     &:active {
+//     outline: 0;
+//     background: transparent;
+//     border-bottom: 2px solid $color-denim;
+//     }
+// }
 
   .btn-login {
     display: inline-block;

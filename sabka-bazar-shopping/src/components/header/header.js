@@ -5,6 +5,7 @@ import "../../styles/Flex.scss";
 import Model from "../model";
 import Anchor from '../shared/Anchor/Anchor';
 import Button from '../shared/Button/Button';
+import Image from '../shared/Image/Image';
 import "font-awesome/css/font-awesome.min.css";
 
 function Header(props) {
@@ -36,7 +37,9 @@ function Header(props) {
          <div className="mobile-navbar">
                 <div className="flexContainer mobile-nav">
                     <div className="mobile-logo">
-                        <Link to={'/'} title="logo"><img src={'/static/images/logo.png'} alt="logo" /></Link>
+                        <Link to={'/'} title="logo">
+                          <Image src={'/static/images/logo.png'} alt="logo" />
+                          </Link>
                         <ul className="myLinks" style={{ display: display }}>
                             <li><Link to={'/'}>Home</Link></li>
                             <li><Link to={'/plp/all'}>Products</Link></li>
@@ -46,7 +49,10 @@ function Header(props) {
                     </div>
            
                         <div className="mobile-cart">
-                            <i onClick={showModal} className="m-btn-cart">  <img src={'/static/images/cart.svg'} alt="cart logo" /><span>({cartProducts ? cartProducts.length : 0})</span></i>
+                            <i onClick={showModal} className="m-btn-cart">  
+                            <Image src={'/static/images/cart.svg'} alt="cart logo" />
+                            <span>({cartProducts ? cartProducts.length : 0})</span>
+                            </i>
                         </div>
                         <div className="mobile-menu">
                             <i onClick={() => showMobileMenu()} className="fa fa-bars"></i>
@@ -59,7 +65,7 @@ function Header(props) {
           <div className="flexItem flexContainer flexCenter itemCenter logo">
             
               <Anchor to="#" title="logo">
-              <img src="/static/images/logo.png" alt="sabka-bazar-logo" />
+              <Image src="/static/images/logo.png" alt="sabka-bazar-logo" />
               </Anchor>
            
           </div>
@@ -86,7 +92,7 @@ function Header(props) {
             </nav>
             <div className="flexCart flexContainer flexCenter flexEnd">
               <Button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} items cart`} onClick={showModal}>
-              <img src="/static/images/cart.svg" alt="cart-logo" />
+              <Image src="/static/images/cart.svg" alt="cart-logo" />
               <span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length === 1 ? 'item' : 'items'}</span>
               </Button>
             </div>

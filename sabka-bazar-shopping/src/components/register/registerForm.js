@@ -3,6 +3,7 @@ import Header from "../header/header";
 import Footer from "../footer";
 import FormInput from '../shared/FormInput/FormInput';
 import Button from '../shared/Button/Button';
+import Heading from '../shared/Heading/Heading';
 import '../../styles/register.scss'
 import './../../styles/Grid.scss';
 
@@ -111,7 +112,7 @@ class Register extends Component {
       <main className="section-form">
       <div className="row">
       <div className="col span-1-of-2 shopping-form">
-        <h1>Signup</h1>
+        <Heading variant="h1"> Signup</Heading>
         <p>We do not share your personal details with anyone.</p>
       </div>
       <div className="row">

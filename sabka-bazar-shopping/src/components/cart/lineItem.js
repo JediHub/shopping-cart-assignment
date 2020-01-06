@@ -1,12 +1,13 @@
 import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 import Button from '../shared/Button/Button';
+import Image from '../shared/Image/Image';
 
 const LineItem = (props) => {
     const { obj, i, plusProduct, minusProduct } = props;
     return <div key={i} className="shopping-cart-item">
         <div className="apple-logo">
-            <img src={obj[0].imageURL} alt={obj[0].name} />
+            <Image src={obj[0].imageURL} alt={obj[0].name} />
         </div>
         <p><strong>{obj[0].name}</strong></p>
         <Button className="icon-minus" aria-label={`remove ${obj[0].name}`} onClick={() => minusProduct(obj[0])}><i className="fa fa-minus-circle icon-minus"></i></Button>

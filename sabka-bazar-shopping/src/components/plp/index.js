@@ -3,6 +3,8 @@ import Header from '../header/header';
 import Footer from '../footer';
 import Anchor from '../shared/Anchor/Anchor';
 import Button from '../shared/Button/Button';
+import Heading from '../shared/Heading/Heading';
+import Image from '../shared/Image/Image';
 import "../../styles/plp.scss";
 //import "../../styles/common.scss";
 import "../../styles/Flex.scss";
@@ -38,11 +40,11 @@ function Plp(props) {
         products && products.map((obj, i) => {
             return (
             <div key={obj.id} className="item">
-                <h1>List of products based on categories</h1>
-                <h2>{obj.name}</h2>
+                <Heading variant="h1">List of products based on categories</Heading>
+                <Heading variant="h2">{obj.name}</Heading>
                 <div className="flexContainer flexColumnDirection flexRowDirection item-wrapper">
                     <div className="item-inner-content">
-                        <img src={obj.imageURL} alt={obj.name} />
+                        <Image src={obj.imageURL} alt={obj.name} />
                     </div>
                     <div className="item-inner-content">
                         <p>{obj.description}</p>
@@ -68,7 +70,7 @@ function Plp(props) {
                     <nav className="topnavside"> 
                     <Anchor to="#" className="showMenu" title={cid.replace(/-/g, ' ').toLowerCase()} onClick={showMenu} aria-label="Show Menu">
                     <span className="selectedFilter" >{cid.replace(/-/g, ' ').toUpperCase()}</span>
-                    <img src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" />
+                    <Image src="/static/images/arrow-down.svg" className="iconDown" alt="icon-down" />
                     </Anchor>
                         <ul className="myLinks" role="menu" style={{ display: displayProp }} onClick={showMenu}>
                             <li role="menuitem" className={cid === 'fruit-and-veg' ? 'active' : 'inactive'}><Anchor to={'/plp/fruit-and-veg'} title="Fruits &amp; Vegitables" aria-label="Fruits &amp; Vegetables menu item">Fruits &amp; Vegitables</Anchor></li>

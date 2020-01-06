@@ -5,6 +5,7 @@ import Footer from "../footer";
 import FormInput from '../shared/FormInput/FormInput';
 import Anchor from '../shared/Anchor/Anchor';
 import Button from '../shared/Button/Button';
+import Heading from '../shared/Heading/Heading';
 import "../../styles/common.scss";
 
 const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
@@ -74,7 +75,7 @@ class Login extends Component {
         <main className="section-form">
           <div className="row">
           <div className="col span-1-of-2 shopping-form">
-              <h1>Login</h1>
+              <Heading variant="h1">Login</Heading>
               <p className="order-info">Get access to your orders wish list and recommendations </p>
             </div>
             <div className="row">

@@ -13,7 +13,7 @@ function Home(props) {
     
     <div className="container">
       <Header cartProducts={cartProducts} />
-      <main className="main">
+      <main className="main" id="main">
         
       <Carousel
         naturalSlideWidth={100}

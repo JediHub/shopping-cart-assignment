@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Header from "../header/header";
 import Footer from "../footer";
-//import { Link } from "react-router-dom";
 import FormInput from '../shared/FormInput/FormInput';
-import Anchor from '../shared/Anchor/Anchor';
 import Button from '../shared/Button/Button';
 import Heading from '../shared/Heading/Heading';
 import "../../styles/common.scss";
@@ -72,15 +70,14 @@ class Login extends Component {
     return (
       <div className="container">
         <Header cartProducts={cartProducts}/>
-        <main className="section-form">
-          <div className="row">
-          <div className="col span-1-of-2 shopping-form">
+        <main className="section-form" id="main">
+          <div className="form">
+          <div className="shopping-form">
               <Heading variant="h1">Login</Heading>
               <p className="order-info">Get access to your orders wish list and recommendations </p>
             </div>
-            <div className="row">
-              <form onSubmit={this.handleSubmit} noValidate>
-                <div className="col span-1-of-2">
+              <form action="#" onSubmit={this.handleSubmit} noValidate>
+              
                   <FormInput
                     label="Email"
                     name="email"
@@ -109,15 +106,10 @@ class Login extends Component {
                     noValidate
                   />
 
-                  <div className="row form-input">
-                  <Anchor to="#" title="Login">
                   <Button type="submit" className="btn-login">Login</Button>
-                  </Anchor>
-                  </div>
-                </div>
+                
               </form>
             </div>
-          </div>
         </main>
         <Footer />
       </div>

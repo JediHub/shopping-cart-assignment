@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import '../../styles/header.scss';
 import "../../styles/Flex.scss";
 import Model from "../model";
@@ -34,7 +33,7 @@ function Header(props) {
   return (
     <div>
       <header>
-         <div className="mobile-navbar">
+         {/* <div className="mobile-navbar">
                 <div className="flexContainer mobile-nav">
                     <div className="mobile-logo">
                         <Link to={'/'} title="logo">
@@ -59,8 +58,8 @@ function Header(props) {
                         </div>
 
                 </div>
-            </div>
-
+            </div> */}
+        <div className="desktop">
         <div className="flexContainer web-app">
           <div className="flexItem flexContainer flexCenter itemCenter logo">
             
@@ -97,6 +96,7 @@ function Header(props) {
               </Button>
             </div>
             </div>
+        </div>
         </div>
       </header>
 

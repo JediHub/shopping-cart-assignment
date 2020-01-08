@@ -4,7 +4,7 @@ import Footer from "../footer";
 import FormInput from '../shared/FormInput/FormInput';
 import Button from '../shared/Button/Button';
 import Heading from '../shared/Heading/Heading';
-import '../../styles/register.scss'
+import "../../styles/common.scss";
 import './../../styles/Grid.scss';
 
 const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
@@ -109,15 +109,14 @@ class Register extends Component {
     return (
       <div className='container'>
       <Header cartProducts={cartProducts}/>
-      <main className="section-form">
-      <div className="row">
-      <div className="col span-1-of-2 shopping-form">
+      <main className="section-form" id="main">
+      <div className="form">
+      <div className="shopping-form">
         <Heading variant="h1"> Signup</Heading>
         <p>We do not share your personal details with anyone.</p>
       </div>
-      <div className="row">
       <form onSubmit={this.handleSubmit} noValidate>
-                <div className="col span-1-of-2">
+                <div className="">
                 <FormInput
                     label="First Name"
                     name="firstName"
@@ -188,13 +187,10 @@ class Register extends Component {
                     noValidate
                 />
              
-              <div className="row form-input">
              <Button type="submit" value="Submit" className="btn-login">Signup</Button>
-             </div>
            </div>
           </form>
           </div>
-        </div>
         </main>
         <Footer />
       </div>

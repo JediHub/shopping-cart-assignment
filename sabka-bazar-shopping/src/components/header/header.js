@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../../styles/header.scss';
-import "../../styles/Flex.scss";
+import "../../styles/Layout.scss";
 import Model from "../model";
 import Anchor from '../shared/Anchor/Anchor';
 import Button from '../shared/Button/Button';

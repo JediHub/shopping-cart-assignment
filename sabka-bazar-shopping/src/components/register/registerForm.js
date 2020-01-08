@@ -108,6 +108,7 @@ class Register extends Component {
     const { cartProducts } = this.props;
     return (
       <div className='container'>
+      <a className="skip-main" href="#main">Skip to main content</a>
       <Header cartProducts={cartProducts}/>
       <main className="section-form" id="main">
       <div className="form">

@@ -6,6 +6,33 @@
     font-size: 18px;
 }
 
+
+.skip-main {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+
+.skip-main:focus, a.skip-main:active {
+    color: #fff;
+    background-color:#888585;
+    left: auto;
+    top: auto;
+    width: 13%;
+    height: auto;
+    overflow:auto;
+    margin: 30px 0 0 10px;
+    padding:4px;
+    border-radius: 4px;
+    text-align:center;
+    font-size:1.2em;
+    z-index:999;
+}
+
 .btn-text{
     vertical-align: center;
 }

@@ -6,9 +6,8 @@ import Button from '../shared/Button/Button';
 import Heading from '../shared/Heading/Heading';
 import Image from '../shared/Image/Image';
 import "../../styles/plp.scss";
-//import "../../styles/common.scss";
-import "../../styles/Flex.scss";
-
+import "../../styles/Layout.scss";
+import '../../styles/common.scss';
 
 function Plp(props) {
     const { products, categories, cartProducts } = props;
@@ -62,6 +61,7 @@ function Plp(props) {
         )
 
     return <div className="container">
+    <a className="skip-main" href="#main">Skip to main content</a>
     <Header cartProducts={cartProducts}/>
         <main className="section-plp" id="main">
         <div className="flexContainer">

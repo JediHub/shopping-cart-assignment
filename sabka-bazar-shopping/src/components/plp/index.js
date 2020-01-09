@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import Header from '../header/header';
 import Footer from '../footer';
 import Anchor from '../shared/Anchor/Anchor';
-import Button from '../shared/Button/Button';
-import Heading from '../shared/Heading/Heading';
 import Image from '../shared/Image/Image';
 import "../../styles/plp.scss";
 import "../../styles/Layout.scss";
 import '../../styles/common.scss';
+import ProductItem from './Product/ProductItem';
 
 function Plp(props) {
     const { products, categories, cartProducts } = props;
@@ -38,21 +37,7 @@ function Plp(props) {
     (
         products && products.map((obj, i) => {
             return (
-            <div key={obj.id} className="item">
-                <Heading variant="h1">List of products based on categories</Heading>
-                <Heading variant="h2">{obj.name}</Heading>
-                <div className="flexContainer flexColumnDirection flexRowDirection item-wrapper">
-                    <div className="item-inner-content">
-                        <Image src={obj.imageURL} alt={obj.name} />
-                    </div>
-                    <div className="item-inner-content">
-                        <p>{obj.description}</p>
-                        <span className="price-tag"> MRP Rs. {obj.price}</span>
-                        <Button className="buyNow-btn" onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</Button>
-                    </div>
-                </div>
-                <Button className="buyNow-mobile-btn" onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ Rs.{obj.price}</Button>
-            </div>
+                <ProductItem key={obj.id} obj={obj} buyNow={buyNow} />
             )
         }) 
     ):
@@ -61,7 +46,7 @@ function Plp(props) {
         )
 
     return <div className="container">
-    <a className="skip-main" href="#main">Skip to main content</a>
+    <Anchor className="skip-main" to="#main" title="Skip to main content">Skip to main content</Anchor>
     <Header cartProducts={cartProducts}/>
         <main className="section-plp" id="main">
         <div className="flexContainer">

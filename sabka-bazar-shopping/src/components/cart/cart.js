@@ -1,7 +1,7 @@
 import React from "react";
 import '../../styles/cart.scss';
 import groupBy from 'lodash.groupby';
-import Lineitem from './lineItem';
+import LineItem from './lineItem';
 import Footer from './footer';
 import CartOffer from './cartOffer';
 import Button from '../shared/Button/Button';
@@ -37,7 +37,7 @@ function Cart(props) {
                     {groupedProducts && Object.values(groupedProducts).map((obj, i) => {
                         totalCheckoutPrice += obj[0].price * obj.length;
                         return (
-                            <Lineitem i={i} obj={obj} plusProduct={plusProduct} minusProduct={minusProduct} />
+                            <LineItem i={i} obj={obj} plusProduct={plusProduct} minusProduct={minusProduct} />
                         )
                     })}
                 </div>

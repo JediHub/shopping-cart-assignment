@@ -13,8 +13,8 @@ import {
 function Carousel(props){
     const { naturalSlideWidth, naturalSlideHeight, totalSlides, isPlaying, banners } = props;
     const carouselStyle = {
-       'margin-top': '10px',
-       'box-shadow': '0px 6px 5px -3px #d8d7d7'
+       'marginTop': '10px',
+       'boxShadow': '0px 6px 5px -3px #d8d7d7'
     }
     return (
         <>

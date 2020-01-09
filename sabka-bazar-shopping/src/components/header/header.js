@@ -33,24 +33,24 @@ function Header(props) {
   return (
     <div>
       <header>
-         {/* <div className="mobile-navbar">
+         <div className="mobile-navbar">
                 <div className="flexContainer mobile-nav">
                     <div className="mobile-logo">
-                        <Link to={'/'} title="logo">
+                        <Anchor to={'/'} title="logo">
                           <Image src={'/static/images/logo.png'} alt="logo" />
-                          </Link>
+                          </Anchor>
                         <ul className="myLinks" style={{ display: display }}>
-                            <li><Link to={'/'}>Home</Link></li>
-                            <li><Link to={'/plp/all'}>Products</Link></li>
-                            <li><Link to={'/login'}>Sign In</Link></li>
-                            <li><Link to={'/register'}>Register</Link></li>
+                            <li><Anchor to={'/'}>Home</Anchor></li>
+                            <li><Anchor to={'/plp/all'}>Products</Anchor></li>
+                            <li><Anchor to={'/login'}>Sign In</Anchor></li>
+                            <li><Anchor to={'/register'}>Register</Anchor></li>
                         </ul>
                     </div>
            
                         <div className="mobile-cart">
                             <i onClick={showModal} className="m-btn-cart">  
                             <Image src={'/static/images/cart.svg'} alt="cart logo" />
-                            <span>({cartProducts ? cartProducts.length : 0})</span>
+                            <span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length === 1 ? 'item' : 'items'}</span>
                             </i>
                         </div>
                         <div className="mobile-menu">
@@ -58,12 +58,12 @@ function Header(props) {
                         </div>
 
                 </div>
-            </div> */}
+            </div>
         <div className="desktop">
         <div className="flexContainer web-app">
           <div className="flexItem flexContainer flexCenter itemCenter logo">
             
-              <Anchor to="#" title="logo">
+              <Anchor to="/" title="logo">
               <Image src="/static/images/logo.png" alt="sabka-bazar-logo" />
               </Anchor>
            

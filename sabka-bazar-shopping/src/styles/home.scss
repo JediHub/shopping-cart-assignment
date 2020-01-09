@@ -81,7 +81,7 @@
       display: flex;
         img {
         width: auto;
-        height: 63px;
+        height: 78px;
         margin: 12px 0 12px 0;
         }
     }
@@ -114,21 +114,36 @@
   
   }
 
+  @media only screen and (min-width: 320px) {
+    .home-tile {
+      img {
+      height: 60px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 375px) {
+    .home-tile {
+      img {
+      height: 61px;
+      }
+    }
+  }
+
   @media only screen and (min-width: 500px) {
     .home-tile {
         img {
-        width: auto;
         height: 93px;
         }
-    }
-
+      }
   }
 
 @media only screen and (min-width: 768px) {
   .home-tile {
     text-align: center;
     border-bottom: 2px solid $color-lightgray;
-    padding-bottom: 20px;
+    //padding-bottom: 20px;
+    padding: 1% 0;
       img {
       width: auto;
       height: 140px;
@@ -170,7 +185,8 @@
   .home-tile {
     text-align: center;
     border-bottom: 2px solid $color-lightgray;
-    padding-bottom: 20px;
+    //padding-bottom: 20px;
+    padding: 1% 0;
       img {
       width: auto;
       height: 140px;

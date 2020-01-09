@@ -106,9 +106,9 @@
             }
         }
         .cart-body{
-            height: 350px;
+            height: 606px;
             overflow:auto;
-    .cart-items{    
+        .cart-items{    
         .shopping-cart-item {
             background-color: $color-white;
             box-sizing: border-box;
@@ -127,7 +127,6 @@
         }
 
         p{
-            //margin-left: 100px;
             font-size: 16px;
         }
         i {
@@ -178,12 +177,18 @@
 }
 
 
-@media screen and (min-width: 480px){
+@media only screen and (min-width: 480px){
+
     .shopping-cart{
         position: fixed;
         width: 30%;
         top:12%;
         left:60%;
+        .shopping-cart-contents {
+            .cart-body{
+                height: 629px;
+            }
+        }
     }
 
     .shopping-cart-header {

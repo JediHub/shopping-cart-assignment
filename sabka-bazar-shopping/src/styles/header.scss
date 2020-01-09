@@ -6,62 +6,58 @@
   margin: 0;
 }
 
-.desktop {
-  width: 70%;
-  margin: auto;
-}
-
 .web-app {
     display: none;
 }
 
-// // responsive header
-//   .mobile-navbar {
-//     display: block;   //comment
-//     overflow: hidden;
-//     .mobile-nav {
-//       display: flex;
-//     }
-//     .mobile-logo {
-//       flex: 1 0 70%;
-//     }
-//     .mobile-cart {
-//       flex: 1 0 16%;
-//     }
-//     .mobile-menu {
-//       flex: 1 0 14%;
-//       padding: 4% 4% 1% 4%;
-//     }
-//     img{
-//       width: 30%;
-//     }
-//     #myLinks {
-//       display: none;
-//     }
-//     ul li {
-//       list-style: none;
-//     }
-//     a {
-//     color: $color-black;
-//     padding: 14px 16px;
-//     text-decoration: none;
-//     font-size: 17px;
-//     display: block;
-//     }
-//     &:focus {
-//     outline: none;
-//     }
-//     a.icon {
-//     display: block;
-//     position: absolute;
-//     right: 7px;
-//     top: 8px; 
-//     }
-//   }
+// responsive header
+  .mobile-navbar {
+    display: block;   
+    overflow: hidden;
+    box-shadow: 0px 6px 5px -3px #d8d7d7;
+    .mobile-nav {
+      display: flex;
+    }
+    .mobile-logo {
+      flex: 1 0 60%; 
+    }
+    .mobile-cart {
+      flex: 1 0 28%;  
+      margin-top: 9px;
+    }
+    .mobile-menu {
+      flex: 1 0 12%; 
+      padding: 4% 4% 1% 4%;
+    }
+    img{
+      width: 30%;
+    }
+    #myLinks {
+      display: none;
+    }
+    ul li {
+      list-style: none;
+    }
+    a {
+    color: $color-black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    }
+    &:focus {
+    outline: none;
+    }
+    a.icon {
+    display: block;
+    position: absolute;
+    right: 7px;
+    top: 8px; 
+    }
+  }
 
   .m-btn-cart {
     display: block;
-    width: 50%;
     padding: 4% 4% 1% 4%;
     opacity: 0.7;
     text-align: center;
@@ -155,6 +151,12 @@ header {
 
 @media only screen and (min-width: 1024px) {
  
+
+.desktop {
+  width: 70%;
+  margin: auto;
+}
+
 .btn-cart {
   width: 30%;
   height: 52px;

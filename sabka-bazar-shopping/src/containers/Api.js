@@ -40,7 +40,6 @@ export const postAddtoCartData = async (data) => {
             body: data.id
         });
         let resp = await apiRes.json();
-        console.log('add to cart api called response', resp);
         return resp;
     } catch (e) {
         console.log(e);

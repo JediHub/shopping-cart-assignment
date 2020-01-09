@@ -4,6 +4,7 @@ import Footer from "../footer";
 import FormInput from '../shared/FormInput/FormInput';
 import Button from '../shared/Button/Button';
 import Heading from '../shared/Heading/Heading';
+import Anchor from '../shared/Anchor/Anchor';
 import "../../styles/common.scss";
 import './../../styles/Grid.scss';
 
@@ -108,15 +109,15 @@ class Register extends Component {
     const { cartProducts } = this.props;
     return (
       <div className='container'>
-      <a className="skip-main" href="#main">Skip to main content</a>
+      <Anchor className="skip-main" to="#main" title="Skip to main content">Skip to main content</Anchor>
       <Header cartProducts={cartProducts}/>
       <main className="section-form" id="main">
       <div className="form">
       <div className="shopping-form">
         <Heading variant="h1"> Signup</Heading>
-        <p>We do not share your personal details with anyone.</p>
+        <p className="order-info">We do not share your personal details with anyone.</p>
       </div>
-      <form onSubmit={this.handleSubmit} noValidate>
+      <form action="#" onSubmit={this.handleSubmit} noValidate>
                 <div className="">
                 <FormInput
                     label="First Name"

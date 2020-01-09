@@ -4,6 +4,7 @@ import Footer from "../footer";
 import FormInput from '../shared/FormInput/FormInput';
 import Button from '../shared/Button/Button';
 import Heading from '../shared/Heading/Heading';
+import Anchor from '../shared/Anchor/Anchor';
 import "../../styles/common.scss";
 
 const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
@@ -69,7 +70,7 @@ class Login extends Component {
     const { cartProducts } = this.props;
     return (
       <div className="container">
-      <a className="skip-main" href="#main">Skip to main content</a>
+      <Anchor className="skip-main" to="#main" title="Skip to main content">Skip to main content</Anchor>
         <Header cartProducts={cartProducts}/>
         <main className="section-form" id="main">
           <div className="form">

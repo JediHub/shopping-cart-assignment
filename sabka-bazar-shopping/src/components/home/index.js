@@ -5,6 +5,7 @@ import "../../styles/home.scss";
 import '../../styles/common.scss';
 import Category from './Category/Category';
 import Carousel from './Carousel/Carousel';
+import Anchor from '../shared/Anchor/Anchor';
 
 
 function Home(props) {
@@ -12,7 +13,7 @@ function Home(props) {
   return (
     
     <div className="container">
-      <a className="skip-main" href="#main">Skip to main content</a>
+      <Anchor className="skip-main" to="#main" title="Skip to main content">Skip to main content</Anchor>
       <Header cartProducts={cartProducts} />
       <main className="main" id="main">
         

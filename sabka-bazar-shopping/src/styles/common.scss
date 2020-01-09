@@ -91,6 +91,7 @@ label {
     }
     .order-info {
     padding: 2% 0;
+    font-size: 14px;
     }
 }
 
@@ -118,6 +119,9 @@ label {
         flex: 0 1 50%;
         h1 {
         font-size: 20px;
+        }
+        .order-info {
+        font-size: 17px;
         }
     }
 

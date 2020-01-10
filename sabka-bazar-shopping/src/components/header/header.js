@@ -6,11 +6,13 @@ import Anchor from '../shared/Anchor/Anchor';
 import Button from '../shared/Button/Button';
 import Image from '../shared/Image/Image';
 import "font-awesome/css/font-awesome.min.css";
+import { useWindowResize } from '../shared/WindowResize/useWindowResize';
 
 function Header(props) {
     const { cartProducts } = props;
     const [display, setDisplay] = useState('none');
     const [show, setModel] = useState(false);
+    const  { width } = useWindowResize();
    
 
     let showModal = () => {
@@ -30,8 +32,9 @@ function Header(props) {
   }
   }
 
-  return (
-    <div>
+    if(width < 768) {
+      return (
+      <div>
       <header>
          <div className="mobile-navbar">
                 <div className="flexContainer mobile-nav">
@@ -59,7 +62,15 @@ function Header(props) {
 
                 </div>
             </div>
-        <div className="desktop">
+      </header>
+      <Model show={show} handleClose={hideModal} />
+      </div>
+      )
+    } else {
+      return (
+      <div>
+      <header>
+      <div className="desktop">
         <div className="flexContainer web-app">
           <div className="flexItem flexContainer flexCenter itemCenter logo">
             
@@ -99,10 +110,10 @@ function Header(props) {
         </div>
         </div>
       </header>
-
       <Model show={show} handleClose={hideModal} />
   </div>
-  );
-}
+      );
+    }
+  }
 
 export default Header;

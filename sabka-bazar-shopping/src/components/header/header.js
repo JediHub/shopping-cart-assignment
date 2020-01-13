@@ -38,7 +38,7 @@ function Header(props) {
       <header>
          <div className="mobile-navbar">
                 <div className="flexContainer mobile-nav">
-                    <div className="mobile-logo">
+                    <div className="mobile-menu">
                         <Anchor to={'/'} title="logo">
                           <Image src={'/static/images/logo.png'} alt="logo" />
                           </Anchor>
@@ -56,7 +56,7 @@ function Header(props) {
                             <span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length === 1 ? 'item' : 'items'}</span>
                             </i>
                         </div>
-                        <div className="mobile-menu">
+                        <div className="mobile-hamburger">
                             <i onClick={() => showMobileMenu()} className="fa fa-bars"></i>
                         </div>
 

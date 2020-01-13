@@ -38,8 +38,6 @@
 }
 
 .form {
-    //display: flex;
-    //flex-direction: column;
     padding: 2% 0;
 }
 
@@ -80,7 +78,6 @@ label {
 }
 
 .shopping-form {
-    //display: flex;
     flex: 0 1 50%;
     flex-direction: column;
     margin-bottom: 10%;
@@ -96,7 +93,6 @@ label {
 }
 
 .form_section {
-    //display: flex;
     flex: 0 1 auto;
     flex-direction: column;
 }
@@ -110,10 +106,7 @@ label {
 
 
 @media only screen and (min-width: 768px){
-    .form {
-        //display: flex;
-        //flex-direction: row;
-    }
+   
     .shopping-form {
         margin-top: 1%;
         flex: 0 1 50%;

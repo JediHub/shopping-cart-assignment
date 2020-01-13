@@ -7,16 +7,18 @@ import "../../styles/plp.scss";
 import "../../styles/Layout.scss";
 import '../../styles/common.scss';
 import ProductItem from './Product/ProductItem';
+import { useWindowResize } from '../../components/header/useWindowResize';
 
 function Plp(props) {
     const { products, categories, cartProducts } = props;
     const [displayProp, setDisplayProp] = useState('');
+    const { width } = useWindowResize();
 
     let cid = props.match.params.cid;
 
 
     function showMenu() {
-        if (window.innerWidth < 768) {
+        if (width < 768) {
         if (displayProp === "block") {
             setDisplayProp('none');
         } else {
@@ -44,12 +46,12 @@ function Plp(props) {
         (
             <p className="no-items">Try again after some time.</p>
         )
-
+    
     return <div className="container">
     <Anchor className="skip-main" to="#main" title="Skip to main content">Skip to main content</Anchor>
     <Header cartProducts={cartProducts}/>
         <main className="section-plp" id="main">
-        <div className="flexContainer">
+        <div className={`flexRowDirection ${width < 768 ? '' : 'flexContainer'}`}>
                 
             <aside className="sidebar">   
                     <nav className="topnavside"> 

@@ -6,7 +6,7 @@ import Anchor from '../shared/Anchor/Anchor';
 import Button from '../shared/Button/Button';
 import Image from '../shared/Image/Image';
 import "font-awesome/css/font-awesome.min.css";
-import { useWindowResize } from '../shared/WindowResize/useWindowResize';
+import { useWindowResize } from './useWindowResize';
 
 function Header(props) {
     const { cartProducts } = props;

@@ -2,14 +2,16 @@ import React from 'react';
 import Image from '../../shared/Image/Image';
 import Heading from '../../shared/Heading/Heading';
 import Button from '../../shared/Button/Button';
+import { useWindowResize } from '../../header/useWindowResize';
 
 function ProductItem(props) {
     const { buyNow, obj } = props;
+    const { width } = useWindowResize();
     return (
         <div key={obj.id} className="item">
                 <Heading variant="h1">List of products based on categories</Heading>
                 <Heading variant="h2">{obj.name}</Heading>
-                <div className="flexContainer flexColumnDirection flexRowDirection item-wrapper">
+                <div className={`flexContainer flexRowDirection item-wrapper ${width < 768 ? '': 'flexColumnDirection'}`}>
                     <div className="item-inner-content">
                         <Image src={obj.imageURL} alt={obj.name} />
                     </div>

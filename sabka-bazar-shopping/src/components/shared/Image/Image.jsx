@@ -13,8 +13,6 @@ const Image = ({
         <img
         className={className}
         src={src}
-        srcSet={srcset}
-        sizes={sizes}
         alt={alt}
         {...other}
         />
@@ -22,8 +20,6 @@ const Image = ({
 };
 
 Image.defaultProps = {
-    srcset: '',
-    sizes: '',
     className: ''
 };
 
@@ -31,8 +27,6 @@ Image.propTypes = {
     className: PropTypes.string,
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
-    srcset: PropTypes.string,
-    sizes: PropTypes.string,
 }
 
 export default Image;

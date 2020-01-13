@@ -7,6 +7,7 @@ import Heading from '../shared/Heading/Heading';
 import Anchor from '../shared/Anchor/Anchor';
 import "../../styles/common.scss";
 import './../../styles/Grid.scss';
+import '../../styles/Layout.scss';
 
 const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
 const validPasswordRegex = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/);
@@ -31,6 +32,7 @@ class Register extends Component {
       email: '',
       password: '',
       confirmPassword: '',
+      windowWidth: '',
       errors: {
         firstName: '',
         lastName: '',
@@ -83,6 +85,19 @@ class Register extends Component {
     this.setState({errors, [name]: value});
   }
 
+  handleResize = () => this.setState({
+    windowWidth: window.innerWidth,
+  })
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillMount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     let errors = this.state.errors;
@@ -112,7 +127,7 @@ class Register extends Component {
       <Anchor className="skip-main" to="#main" title="Skip to main content">Skip to main content</Anchor>
       <Header cartProducts={cartProducts}/>
       <main className="section-form" id="main">
-      <div className="form">
+      <div className={`form flexContainer flexRowDirection ${ (this.state.windowWidth) > 768 ? '' : 'flexColumnDirection'}`}>
       <div className="shopping-form">
         <Heading variant="h1"> Signup</Heading>
         <p className="order-info">We do not share your personal details with anyone.</p>

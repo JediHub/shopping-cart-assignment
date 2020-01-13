@@ -1,3 +1,14 @@
+    .flexContainer {
+        display: flex;
+    }
+
+    .flexRowDirection {
+        flex-direction: row;
+    }
+
+    .flexColumnDirection {
+        flex-direction: column;
+    }
 
     .flexItem {
     flex: 1;
@@ -9,6 +20,10 @@
 
     .flexEnd {
     align-items: flex-end;
+    }
+
+    .flexRow {
+        flex-flow: row wrap;
     }
 
     

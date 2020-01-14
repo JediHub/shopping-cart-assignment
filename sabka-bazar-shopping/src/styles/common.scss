@@ -18,8 +18,8 @@
 }
 
 .skip-main:focus, a.skip-main:active {
-    color: #fff;
-    background-color:#888585;
+    color: $color-white;
+    background-color: $color-suvaGrey;
     left: auto;
     top: auto;
     width: 13%;

@@ -89,7 +89,7 @@
      .buyNow-mobile-btn {
         background-color: $color-oldrose;
         width: 99%;
-        color: #fff;
+        color: $color-white;
         text-decoration: none;
         padding: 7px;
         font-size: 15px;
@@ -137,7 +137,7 @@
        .item {
            width: 48%;
            margin-left: 4px;
-           border-right: 4px solid #F9F9F9;
+           border-right: 4px solid $color-whitesmoke;
            .buyNow-mobile-btn {
             display: block;
             width: 97%;
@@ -211,8 +211,8 @@
         .products{
             .item {
                 width: 23%;
-                border-right: 4px solid #F9F9F9;
-                border-bottom: 3px dotted #f2f2f2;
+                border-right: 4px solid $color-whitesmoke;
+                border-bottom: 3px dotted $color-whitesmoke;
                 .buyNow-mobile-btn {
                     display: none;
                 }
@@ -248,7 +248,7 @@
                     width: 49%;
                     background-color: $color-oldrose;
                     border: 1px solid $color-oldrose;
-                    color: #fff;
+                    color: $color-white;
                     text-decoration: none;
                     padding: 3px;
                     margin: 0 0 5px 9px;
@@ -314,8 +314,8 @@
         .products{
             .item {
                 width: 24%;
-                border-right: 4px solid #F9F9F9;
-                border-bottom: 3px dotted #f2f2f2;
+                border-right: 4px solid $color-whitesmoke;
+                border-bottom: 3px dotted $color-whitesmoke;
                 .buyNow-mobile-btn {
                     display: none;
                 }

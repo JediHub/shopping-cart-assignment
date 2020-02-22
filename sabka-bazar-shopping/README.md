@@ -1,5 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Calling list of APIs
+
+Using [Mocky.io] is a simple app which allows to generate custom HTTP responses. 
+
+banners: [http://localhost:5000/banners]
+Categories: [http://localhost:5000/categories]
+Products: [http://localhost:5000/products]
+AddToCart: [http://localhost:5000/addToCart]
+
 ## Available Scripts
 
 In the project directory, you can run:

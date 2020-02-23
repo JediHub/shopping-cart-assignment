@@ -6,7 +6,7 @@ import Button from '../shared/Button/Button';
 import Heading from '../shared/Heading/Heading';
 import Anchor from '../shared/Anchor/Anchor';
 import "../../styles/common.scss";
-import './../../styles/Grid.scss';
+import '../../styles/Grid.scss';
 import '../../styles/Layout.scss';
 
 const validEmailRegex = RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);

@@ -7,7 +7,7 @@ import "../../styles/plp.scss";
 import "../../styles/Layout.scss";
 import '../../styles/common.scss';
 import ProductItem from './Product/ProductItem';
-import { useWindowResize } from '../../components/header/useWindowResize';
+import { useWindowResize } from '../header/useWindowResize';
 
 function Plp(props) {
     const { products, categories, cartProducts } = props;

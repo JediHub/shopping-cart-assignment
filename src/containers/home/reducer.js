@@ -1,4 +1,4 @@
-import { RECEIVE_BANNER_DATA, RECEIVE_CATEGORIES_DATA } from '../home/constants';
+import { RECEIVE_BANNER_DATA, RECEIVE_CATEGORIES_DATA } from './constants';
 
 export default (state= {}, action)=> {
     switch(action.type) {

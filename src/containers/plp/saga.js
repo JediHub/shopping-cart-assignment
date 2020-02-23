@@ -3,7 +3,7 @@ import { call, put, takeEvery } from "redux-saga/effects";
 import { receivedProductsData, receivedAddToCart } from "./actions";
 import { receiveCategoriesData } from "../home/actions";
 import { REQUEST_PRODUCTS_DATA, REQUEST_ADD_TO_CART } from "./constants";
-import { ProductsData, CategoriesData, postAddtoCartData } from './../Api';
+import { ProductsData, CategoriesData, postAddtoCartData } from '../Api';
 
 
 function* getProductsData(action) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../FormInput/FormInput.scss';
+import './FormInput.scss';
 
 const FormInput = ({
     type,
